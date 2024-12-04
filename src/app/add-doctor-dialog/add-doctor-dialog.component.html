@@ -1,0 +1,51 @@
+<h2 mat-dialog-title>Add New Doctor</h2>
+<mat-dialog-content>
+  <form [formGroup]="addDoctorForm">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="Name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Specialization</mat-label>
+      <input matInput formControlName="Specialization">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="Email">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <input matInput formControlName="Gender">
+      </mat-form-field>
+  
+
+    <mat-form-field>
+      <mat-label>Mobile</mat-label>
+      <input matInput formControlName="Mobile">
+    </mat-form-field>
+  
+
+  <mat-form-field>
+    <mat-label>Education</mat-label>
+    <input matInput formControlName="Education">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Experience</mat-label>
+    <input matInput formControlName="Experience">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>StartHour</mat-label>
+    <input matInput formControlName="StartHour">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>DutyTiming</mat-label>
+    <input matInput formControlName="DutyTiming">
+  </mat-form-field>
+</form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="addDoctor()">Add Doctor</button>
+</mat-dialog-actions>

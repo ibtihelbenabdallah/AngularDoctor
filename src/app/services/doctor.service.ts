@@ -11,6 +11,12 @@ export class DoctorService {
  
     GetAll() : Observable<Doctor[]> 
     {
-      
       return this.httpClient.get<Doctor[]>('http://localhost:3000/Doctor')
-    }}
+    }
+  
+    AddDoctor(d:Doctor) : Observable<void> 
+    {
+      return this.httpClient.post<void>('http://localhost:3000/Doctor',d);
+    }
+  
+  }

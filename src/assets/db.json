@@ -1,187 +1,214 @@
 {
-    "Doctor": [
-      {
-        "Name": "embo Lukeni",
-        "Gender": "Male",
-        "Text": "NemboLukni",
-        "Id": 1,
-        "DepartmentId": 1,
-        "Color": "#ea7a57",
-        "Education": "MBBS, DMRD",
-        "Specialization": "generalmedicine",
-        "Experience": "10+ years",
-        "Designation": "Senior Specialist",
-        "DutyTiming": "Shift1",
-        "Email": "nembo36@sample.com",
-        "Mobile": "(206) 555-9482",
-        "Availability": "busy",
-        "StartHour": "08:00",
-        "EndHour": "17:00",
-        "AvailableDays": [0, 2, 3, 4, 5],
-        "WorkDays": [
-          {
-            "Day": "sunday",
-            "Index": 0,
-            "Enable": true,
-            "WorkStartHour": "2020-08-01T08:00:00Z",
-            "WorkEndHour": "2020-08-01T17:00:00Z",
-            "BreakStartHour": "2020-08-01T12:00:00Z",
-            "BreakEndHour": "2020-08-01T13:00:00Z",
-            "State": "AddBreak"
-          },
-          {
-            "Day": "monday",
-            "Index": 1,
-            "Enable": false,
-            "WorkStartHour": "2020-08-02T08:00:00Z",
-            "WorkEndHour": "2020-08-02T17:00:00Z",
-            "BreakStartHour": "2020-08-02T12:00:00Z",
-            "BreakEndHour": "2020-08-02T13:00:00Z",
-            "State": "TimeOff"
-          },
-          {
-            "Day": "tuesday",
-            "Index": 2,
-            "Enable": true,
-            "WorkStartHour": "2020-08-03T08:00:00Z",
-            "WorkEndHour": "2020-08-03T17:00:00Z",
-            "BreakStartHour": "2020-08-03T12:00:00Z",
-            "BreakEndHour": "2020-08-03T13:00:00Z",
-            "State": "AddBreak"
-          },
-          {
-            "Day": "wednesday",
-            "Index": 3,
-            "Enable": true,
-            "WorkStartHour": "2020-08-04T08:00:00Z",
-            "WorkEndHour": "2020-08-04T17:00:00Z",
-            "BreakStartHour": "2020-08-04T12:00:00Z",
-            "BreakEndHour": "2020-08-04T13:00:00Z",
-            "State": "AddBreak"
-          },
-          {
-            "Day": "thursday",
-            "Index": 4,
-            "Enable": true,
-            "WorkStartHour": "2020-08-05T08:00:00Z",
-            "WorkEndHour": "2020-08-05T17:00:00Z",
-            "BreakStartHour": "2020-08-05T12:00:00Z",
-            "BreakEndHour": "2020-08-05T13:00:00Z",
-            "State": "AddBreak"
-          },
-          {
-            "Day": "friday",
-            "Index": 5,
-            "Enable": true,
-            "WorkStartHour": "2020-08-06T08:00:00Z",
-            "WorkEndHour": "2020-08-06T17:00:00Z",
-            "BreakStartHour": "2020-08-06T12:00:00Z",
-            "BreakEndHour": "2020-08-06T13:00:00Z",
-            "State": "RemoveBreak"
-          },
-          {
-            "Day": "saturday",
-            "Index": 6,
-            "Enable": false,
-            "WorkStartHour": "2020-08-07T08:00:00Z",
-            "WorkEndHour": "2020-08-07T17:00:00Z",
-            "BreakStartHour": "2020-08-07T12:00:00Z",
-            "BreakEndHour": "2020-08-07T13:00:00Z",
-            "State": "TimeOff"
-          }
-        ]
-      },
-      {
-        "Name": "Mollie Cobb",
-        "Gender": "Female",
-        "Text": "MollieCobb",
-        "Id": 2,
-        "DepartmentId": 2,
-        "Color": "#7fa900",
-        "Education": "MBBS, MD PAEDIATRICS, DM NEUROLOGY",
-        "Specialization": "neurology",
-        "Experience": "2+ years",
-        "Designation": "Junior Specialist",
-        "Email": "mollie65@rpy.com",
-        "DutyTiming": "Shift2",
-        "Mobile": "(206) 555-3412",
-        "Availability": "available",
-        "StartHour": "10:00",
-        "EndHour": "19:00",
-        "AvailableDays": [0, 1, 2, 3, 4],
-        "WorkDays": [
-          {
-            "Day": "sunday",
-            "Index": 0,
-            "Enable": true,
-            "WorkStartHour": "2020-08-01T10:00:00Z",
-            "WorkEndHour": "2020-08-01T19:00:00Z",
-            "BreakStartHour": "2020-08-01T14:00:00Z",
-            "BreakEndHour": "2020-08-01T15:00:00Z",
-            "State": "AddBreak"
-          },
-          {
-            "Day": "monday",
-            "Index": 1,
-            "Enable": true,
-            "WorkStartHour": "2020-08-02T10:00:00Z",
-            "WorkEndHour": "2020-08-02T19:00:00Z",
-            "BreakStartHour": "2020-08-02T14:00:00Z",
-            "BreakEndHour": "2020-08-02T15:00:00Z",
-            "State": "RemoveBreak"
-          },
-          {
-            "Day": "tuesday",
-            "Index": 2,
-            "Enable": true,
-            "WorkStartHour": "2020-08-03T10:00:00Z",
-            "WorkEndHour": "2020-08-03T19:00:00Z",
-            "BreakStartHour": "2020-08-03T14:00:00Z",
-            "BreakEndHour": "2020-08-03T15:00:00Z",
-            "State": "AddBreak"
-          },
-          {
-            "Day": "wednesday",
-            "Index": 3,
-            "Enable": true,
-            "WorkStartHour": "2020-08-04T10:00:00Z",
-            "WorkEndHour": "2020-08-04T19:00:00Z",
-            "BreakStartHour": "2020-08-04T14:00:00Z",
-            "BreakEndHour": "2020-08-04T15:00:00Z",
-            "State": "AddBreak"
-          },
-          {
-            "Day": "thursday",
-            "Index": 4,
-            "Enable": true,
-            "WorkStartHour": "2020-08-05T10:00:00Z",
-            "WorkEndHour": "2020-08-05T19:00:00Z",
-            "BreakStartHour": "2020-08-05T14:00:00Z",
-            "BreakEndHour": "2020-08-05T15:00:00Z",
-            "State": "RemoveBreak"
-          },
-          {
-            "Day": "friday",
-            "Index": 5,
-            "Enable": false,
-            "WorkStartHour": "2020-08-06T10:00:00Z",
-            "WorkEndHour": "2020-08-06T19:00:00Z",
-            "BreakStartHour": "2020-08-06T14:00:00Z",
-            "BreakEndHour": "2020-08-06T15:00:00Z",
-            "State": "TimeOff"
-          },
-          {
-            "Day": "saturday",
-            "Index": 6,
-            "Enable": false,
-            "WorkStartHour": "2020-08-07T10:00:00Z",
-            "WorkEndHour": "2020-08-07T19:00:00Z",
-            "BreakStartHour": "2020-08-07T14:00:00Z",
-            "BreakEndHour": "2020-08-07T15:00:00Z",
-            "State": "TimeOff"
-          }
-        ]
-      }
-    ]
-  }
-  
+  "Doctor": [
+    {
+      "Name": "embo Lukeni",
+      "Gender": "Male",
+      "Text": "NemboLukni",
+      "Id": 1,
+      "DepartmentId": 1,
+      "Color": "#ea7a57",
+      "Education": "MBBS, DMRD",
+      "Specialization": "generalmedicine",
+      "Experience": "10+ years",
+      "Designation": "Senior Specialist",
+      "DutyTiming": "Shift1",
+      "Email": "nembo36@sample.com",
+      "Mobile": "(206) 555-9482",
+      "Availability": "busy",
+      "StartHour": "08:00",
+      "EndHour": "17:00",
+      "AvailableDays": [
+        0,
+        2,
+        3,
+        4,
+        5
+      ],
+      "WorkDays": [
+        {
+          "Day": "sunday",
+          "Index": 0,
+          "Enable": true,
+          "WorkStartHour": "2020-08-01T08:00:00Z",
+          "WorkEndHour": "2020-08-01T17:00:00Z",
+          "BreakStartHour": "2020-08-01T12:00:00Z",
+          "BreakEndHour": "2020-08-01T13:00:00Z",
+          "State": "AddBreak"
+        },
+        {
+          "Day": "monday",
+          "Index": 1,
+          "Enable": false,
+          "WorkStartHour": "2020-08-02T08:00:00Z",
+          "WorkEndHour": "2020-08-02T17:00:00Z",
+          "BreakStartHour": "2020-08-02T12:00:00Z",
+          "BreakEndHour": "2020-08-02T13:00:00Z",
+          "State": "TimeOff"
+        },
+        {
+          "Day": "tuesday",
+          "Index": 2,
+          "Enable": true,
+          "WorkStartHour": "2020-08-03T08:00:00Z",
+          "WorkEndHour": "2020-08-03T17:00:00Z",
+          "BreakStartHour": "2020-08-03T12:00:00Z",
+          "BreakEndHour": "2020-08-03T13:00:00Z",
+          "State": "AddBreak"
+        },
+        {
+          "Day": "wednesday",
+          "Index": 3,
+          "Enable": true,
+          "WorkStartHour": "2020-08-04T08:00:00Z",
+          "WorkEndHour": "2020-08-04T17:00:00Z",
+          "BreakStartHour": "2020-08-04T12:00:00Z",
+          "BreakEndHour": "2020-08-04T13:00:00Z",
+          "State": "AddBreak"
+        },
+        {
+          "Day": "thursday",
+          "Index": 4,
+          "Enable": true,
+          "WorkStartHour": "2020-08-05T08:00:00Z",
+          "WorkEndHour": "2020-08-05T17:00:00Z",
+          "BreakStartHour": "2020-08-05T12:00:00Z",
+          "BreakEndHour": "2020-08-05T13:00:00Z",
+          "State": "AddBreak"
+        },
+        {
+          "Day": "friday",
+          "Index": 5,
+          "Enable": true,
+          "WorkStartHour": "2020-08-06T08:00:00Z",
+          "WorkEndHour": "2020-08-06T17:00:00Z",
+          "BreakStartHour": "2020-08-06T12:00:00Z",
+          "BreakEndHour": "2020-08-06T13:00:00Z",
+          "State": "RemoveBreak"
+        },
+        {
+          "Day": "saturday",
+          "Index": 6,
+          "Enable": false,
+          "WorkStartHour": "2020-08-07T08:00:00Z",
+          "WorkEndHour": "2020-08-07T17:00:00Z",
+          "BreakStartHour": "2020-08-07T12:00:00Z",
+          "BreakEndHour": "2020-08-07T13:00:00Z",
+          "State": "TimeOff"
+        }
+      ],
+      "id": "6e4a"
+    },
+    {
+      "Name": "Mollie Cobb",
+      "Gender": "Female",
+      "Text": "MollieCobb",
+      "Id": 2,
+      "DepartmentId": 2,
+      "Color": "#7fa900",
+      "Education": "MBBS, MD PAEDIATRICS, DM NEUROLOGY",
+      "Specialization": "neurology",
+      "Experience": "2+ years",
+      "Designation": "Junior Specialist",
+      "Email": "mollie65@rpy.com",
+      "DutyTiming": "Shift2",
+      "Mobile": "(206) 555-3412",
+      "Availability": "available",
+      "StartHour": "10:00",
+      "EndHour": "19:00",
+      "AvailableDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "WorkDays": [
+        {
+          "Day": "sunday",
+          "Index": 0,
+          "Enable": true,
+          "WorkStartHour": "2020-08-01T10:00:00Z",
+          "WorkEndHour": "2020-08-01T19:00:00Z",
+          "BreakStartHour": "2020-08-01T14:00:00Z",
+          "BreakEndHour": "2020-08-01T15:00:00Z",
+          "State": "AddBreak"
+        },
+        {
+          "Day": "monday",
+          "Index": 1,
+          "Enable": true,
+          "WorkStartHour": "2020-08-02T10:00:00Z",
+          "WorkEndHour": "2020-08-02T19:00:00Z",
+          "BreakStartHour": "2020-08-02T14:00:00Z",
+          "BreakEndHour": "2020-08-02T15:00:00Z",
+          "State": "RemoveBreak"
+        },
+        {
+          "Day": "tuesday",
+          "Index": 2,
+          "Enable": true,
+          "WorkStartHour": "2020-08-03T10:00:00Z",
+          "WorkEndHour": "2020-08-03T19:00:00Z",
+          "BreakStartHour": "2020-08-03T14:00:00Z",
+          "BreakEndHour": "2020-08-03T15:00:00Z",
+          "State": "AddBreak"
+        },
+        {
+          "Day": "wednesday",
+          "Index": 3,
+          "Enable": true,
+          "WorkStartHour": "2020-08-04T10:00:00Z",
+          "WorkEndHour": "2020-08-04T19:00:00Z",
+          "BreakStartHour": "2020-08-04T14:00:00Z",
+          "BreakEndHour": "2020-08-04T15:00:00Z",
+          "State": "AddBreak"
+        },
+        {
+          "Day": "thursday",
+          "Index": 4,
+          "Enable": true,
+          "WorkStartHour": "2020-08-05T10:00:00Z",
+          "WorkEndHour": "2020-08-05T19:00:00Z",
+          "BreakStartHour": "2020-08-05T14:00:00Z",
+          "BreakEndHour": "2020-08-05T15:00:00Z",
+          "State": "RemoveBreak"
+        },
+        {
+          "Day": "friday",
+          "Index": 5,
+          "Enable": false,
+          "WorkStartHour": "2020-08-06T10:00:00Z",
+          "WorkEndHour": "2020-08-06T19:00:00Z",
+          "BreakStartHour": "2020-08-06T14:00:00Z",
+          "BreakEndHour": "2020-08-06T15:00:00Z",
+          "State": "TimeOff"
+        },
+        {
+          "Day": "saturday",
+          "Index": 6,
+          "Enable": false,
+          "WorkStartHour": "2020-08-07T10:00:00Z",
+          "WorkEndHour": "2020-08-07T19:00:00Z",
+          "BreakStartHour": "2020-08-07T14:00:00Z",
+          "BreakEndHour": "2020-08-07T15:00:00Z",
+          "State": "TimeOff"
+        }
+      ],
+      "id": "a224"
+    },
+    {
+      "id": "9c76",
+      "Name": "uhfireu",
+      "Specialization": "ieuiuf",
+      "Email": "rhu@gmail.com",
+      "Mobile": "5367289"
+    },
+    {
+      "id": "13a4",
+      "Name": "ZED",
+      "Specialization": "DZA",
+      "Email": "ZDA@gmail.com",
+      "Mobile": "ZD"
+    }
+  ]
+}
