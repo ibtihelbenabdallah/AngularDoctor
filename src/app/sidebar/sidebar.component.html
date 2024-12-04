@@ -1,0 +1,57 @@
+<!-- Inclure FontAwesome dans le head de votre index.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+<div class="planner-wrapper">
+  <div class="dock">
+    <div class="info align-center">
+      <div class="image"><img src="./assets/admin.png" /></div>
+      <div class="content nameContent">
+        <p class="name" style="margin-top: 16px;">Sana Mahjoub</p>
+        <p class="user-type">Admin</p>
+      </div>
+    </div>
+
+    <div class="sidebar-item dashboard" routerLink="/dashboard">
+      <span class="dashboard-image"><i class="fas fa-tachometer-alt item-image"></i></span>
+      <span class="text">Dashboard</span>
+    </div>
+    <div class="sidebar-item calendar">
+      <span class="scheduler-image"><i class="fas fa-calendar-alt item-image"></i></span>
+      <span class="text">Schedule</span>
+    </div>
+    <div class="sidebar-item doctors"  routerLink="/doctors">
+      <span class="doctors-image"><i class="fas fa-user-md item-image"></i></span>
+      <span class="text">Doctors</span>
+    </div>
+    <div class="sidebar-item patients" routerLink="/patients">
+      <span class="patients-image"><i class="fas fa-procedures item-image"></i></span>
+      <span class="text">Patients</span>
+    </div>
+    <div class="sidebar-item preference" routerLink="/preference">
+      <span class="preference-image"><i class="fas fa-cogs item-image"></i></span>
+      <span class="text">Preference</span>
+    </div>
+    <div class="sidebar-item about" routerLink="/about">
+      <span class="about-image"><i class="fas fa-info-circle item-image"></i></span>
+      <span class="text">About</span>
+    </div>
+  </div>
+
+  <main>
+    <div class="planner-header">
+      <div class="side-bar-opener">
+        <span class="open-icon e-icons"></span>
+      </div>
+      <div class="name-cantainer">
+        <span class="clinic-image icon-logo"></span>
+        <h1 class="clinic-name"> APPOINTMENT PLANNER</h1>
+      </div>
+      <div class="logout-container">
+        <div class="logout-icon-container"><i class="fas fa-sign-out-alt logout-image"></i></div>
+        <span class="logout-name">Logout</span>
+      </div>
+      
+    </div>
+    <router-outlet></router-outlet>
+  </main>
+</div>

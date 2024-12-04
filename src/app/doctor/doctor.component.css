@@ -1,0 +1,51 @@
+/* doctor.component.css */
+.mat-header-row {
+    background-color: red; /* Changer la couleur de fond */
+    color: white; /* Mettre le texte en blanc pour un meilleur contraste */
+  }
+.doctor-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .doctor-card {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  mat-card-header {
+    background-color: #f5f5f5;
+    padding-bottom: 8px;
+  }
+  
+  mat-card-title {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  mat-card-subtitle {
+    color: #888;
+  }
+  
+  mat-card-content {
+    margin-top: 12px;
+    font-size: 0.9em;
+  }
+  
+  mat-card-actions {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  mat-paginator {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  

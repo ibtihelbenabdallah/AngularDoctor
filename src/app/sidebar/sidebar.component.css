@@ -1,0 +1,195 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+  }
+  
+  /* Planner Wrapper */
+  .planner-wrapper {
+    display: flex;
+    height: 100vh;
+    background-color: #ffffff;
+  }
+  
+  /* Sidebar Styling */
+  .dock {
+    width: 250px;
+    background-color: #7575FF;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+  }
+  
+  .dock:hover {
+    width: 300px; /* Élargir la sidebar lors du survol */
+  }
+  
+  .info {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .info .image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .nameContent p {
+    margin: 5px 0;
+  }
+  
+  .nameContent .name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .nameContent .user-type {
+    font-size: 14px;
+    color: #bbb;
+  }
+  
+  /* Sidebar Items */
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+  }
+  
+  .sidebar-item:hover {
+    background-color: #5f5ff0;
+    padding-left: 30px;
+  }
+  
+  .sidebar-item .item-image {
+    font-size: 20px;
+    margin-right: 15px;
+  }
+  
+  .sidebar-item .text {
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sidebar-item:hover .text {
+    opacity: 1;
+  }
+  
+  /* Active Sidebar Item */
+  .sidebar-item.active {
+    background-color: #31708f;
+  }
+  
+  .sidebar-item.active .text {
+    font-weight: bold;
+  }
+  
+  /* Icons */
+  .icon-dashboard, .icon-schedule, .icon-doctors, .icon-patients, .icon-preference, .icon-about {
+    color: #ffffff;
+  }
+  
+  .icon-dashboard { font-size: 22px; }
+  .icon-schedule { font-size: 22px; }
+  .icon-doctors { font-size: 22px; }
+  .icon-patients { font-size: 22px; }
+  .icon-preference { font-size: 22px; }
+  .icon-about { font-size: 22px; }
+  
+  /* Main Content */
+  main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f5f7fa;
+  }
+  
+  /* Header Styling */
+  .planner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .side-bar-opener {
+    cursor: pointer;
+  }
+  
+  .side-bar-opener .open-icon {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .name-cantainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .clinic-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 10px;
+  }
+  
+  .logout-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logout-container .logout-icon-container {
+    margin-right: 10px;
+  }
+  
+  .logout-container .logout-name {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .sb-header-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sb-header-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .sb-github-btn {
+    background-color: #31708f;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sb-github-btn:hover {
+    background-color: #555;
+  }
+  
+  .sb-github-btn .github-image img {
+    width: 20px;
+    height: 20px;
+  }
+  
