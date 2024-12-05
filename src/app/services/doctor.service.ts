@@ -18,5 +18,8 @@ export class DoctorService {
     {
       return this.httpClient.post<void>('http://localhost:3000/Doctor',d);
     }
+    getDoctorById(id: string): Observable<Doctor> {
+      return this.httpClient.get<Doctor>(`http://localhost:3000/Doctor/${id}`);
+    }
   
   }

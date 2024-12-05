@@ -1,1 +1,11 @@
-<p>doctor-details works!</p>
+<div *ngIf="doctor">
+    <h2>Details for Doctor: {{ doctor.Name }}</h2>
+    <p><strong>ID:</strong> {{ doctor.Id }}</p>
+    <p><strong>Name:</strong> {{ doctor.Name }}</p>
+    <p><strong>Specialization:</strong> {{ doctor.Specialization }}</p>
+    <p><strong>Email:</strong> {{ doctor.Email }}</p>
+    <p><strong>Mobile:</strong> {{ doctor.Mobile }}</p>
+  </div>
+  
+
+  
