@@ -1,51 +1,72 @@
-<h2 mat-dialog-title>Add New Doctor</h2>
+<h2 mat-dialog-title>New Doctor</h2>
 <mat-dialog-content>
-  <form [formGroup]="addDoctorForm">
-    <mat-form-field>
-      <mat-label>Name</mat-label>
-      <input matInput formControlName="Name">
+  <form [formGroup]="addDoctorForm" class="new-doctor-form">
+  
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Doctor Name</mat-label>
+      <input matInput formControlName="Name" />
+      <mat-error *ngIf="addDoctorForm.get('Name')?.hasError('required')">Name is required</mat-error>
     </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Specialization</mat-label>
-      <input matInput formControlName="Specialization">
+    <div class="gender-container">
+      <label class="gender-label">Gender</label>
+      <mat-radio-group formControlName="Gender" class="gender-group">
+        <mat-radio-button value="Male">Male</mat-radio-button>
+        <mat-radio-button value="Female">Female</mat-radio-button>
+      </mat-radio-group>
+      <mat-error *ngIf="addDoctorForm.get('Gender')?.hasError('required')">Gender is required</mat-error>
+    </div>
+
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Mobile Number</mat-label>
+      <input matInput formControlName="Mobile" placeholder="Enter 8-digit number" />
+      <mat-error *ngIf="addDoctorForm.get('Mobile')?.hasError('pattern')">Invalid mobile number</mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline" floatLabel="always">
       <mat-label>Email</mat-label>
-      <input matInput formControlName="Email">
+      <input matInput formControlName="Email" />
+      <mat-error *ngIf="addDoctorForm.get('Email')?.hasError('email')">Invalid email address</mat-error>
     </mat-form-field>
-    <mat-form-field>
-        <mat-label>Gender</mat-label>
-        <input matInput formControlName="Gender">
-      </mat-form-field>
-  
 
-    <mat-form-field>
-      <mat-label>Mobile</mat-label>
-      <input matInput formControlName="Mobile">
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Specialization</mat-label>
+      <mat-select formControlName="Specialization">
+        <mat-option *ngFor="let specialization of specializationData" [value]="specialization">
+          {{ specialization }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="addDoctorForm.get('Specialization')?.hasError('required')">Specialization is required</mat-error>
     </mat-form-field>
-  
 
-  <mat-form-field>
-    <mat-label>Education</mat-label>
-    <input matInput formControlName="Education">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Experience</mat-label>
-    <input matInput formControlName="Experience">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>StartHour</mat-label>
-    <input matInput formControlName="StartHour">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>DutyTiming</mat-label>
-    <input matInput formControlName="DutyTiming">
-  </mat-form-field>
-</form>
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Education</mat-label>
+      <input matInput formControlName="Education" />
+      <mat-error *ngIf="addDoctorForm.get('Education')?.hasError('required')">Education is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Experience</mat-label>
+      <mat-select formControlName="Experience">
+        <mat-option *ngFor="let experience of experienceData" [value]="experience">
+          {{ experience }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="addDoctorForm.get('Experience')?.hasError('required')">Experience is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Duty Timing</mat-label>
+      <mat-select formControlName="DutyTiming">
+        <mat-option *ngFor="let timing of dutyTimingsData" [value]="timing">
+          {{ timing }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="addDoctorForm.get('DutyTiming')?.hasError('required')">Duty timing is required</mat-error>
+    </mat-form-field>
+  </form>
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button (click)="addDoctor()">Add Doctor</button>
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="warn" (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" [disabled]="addDoctorForm.invalid" (click)="addDoctor()">Save</button>
 </mat-dialog-actions>
