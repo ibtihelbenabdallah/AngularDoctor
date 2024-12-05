@@ -1,62 +1,26 @@
 {
   "Doctor": [
     {
-      "id": "3425",
-      "Name": "ssssssssssssssssssssssssssssss",
-      "Specialization": "General Medicine",
-      "Email": "eeee@gmail.com",
-      "Mobile": "20138374sss"
-    },
-    {
-      "id": "212a",
-      "Name": "sss",
+      "id": "e74f",
+      "Name": "ara",
       "Gender": "Male",
-      "Mobile": "98767687",
-      "Email": "eeee@gmail.com",
-      "Specialization": "Cardiology",
-      "Education": "isims",
-      "Experience": "3+ years",
+      "Mobile": "52874125",
+      "Email": "cf@gmail.com",
+      "Specialization": "General Medicine",
+      "Education": "jj",
+      "Experience": "1+ years",
       "DutyTiming": "08:00 AM - 05:00 PM"
     },
     {
-      "id": "06d1",
-      "Name": "efje",
+      "id": "ab55",
+      "Name": "malak derbel",
       "Gender": "Female",
-      "Mobile": "54637833",
-      "Email": "eeee@gmail.com",
-      "Specialization": "Cardiology",
-      "Education": "isims",
-      "Experience": "3+ years",
-      "DutyTiming": "08:00 AM - 05:00 PM"
-    },
-    {
-      "id": "84ff",
-      "Name": "IBTIHE ",
-      "Gender": "Female",
-      "Mobile": "20138374",
-      "Email": "eeee@gmail.com",
-      "Specialization": "Cardiology",
-      "Education": "ISISMS",
-      "Experience": "3+ years",
-      "DutyTiming": "10:00 AM - 07:00 PM"
-    },
-    {
-      "id": "47dd",
-      "Name": "ibtihel ben abdallah",
-      "Gender": "Female",
-      "Mobile": "20576135",
-      "Email": "ibtihelbenabdallah94@gmail.com",
+      "Mobile": "29268392",
+      "Email": "derbelmalak@gmail.com",
       "Specialization": "Neurology",
-      "Education": "FSS",
+      "Education": "isims",
       "Experience": "5+ years",
       "DutyTiming": "10:00 AM - 07:00 PM"
-    },
-    {
-      "id": "6fd8",
-      "Name": "malak derbel",
-      "Specialization": "Cardiology",
-      "Email": "eeee@gmail.com",
-      "Mobile": "20138374"
     }
   ]
 }

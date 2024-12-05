@@ -1,10 +1,14 @@
 <div class="doctor-interface-container">
+  <!-- Actions Header -->
   <div class="header-actions">
-    <button mat-raised-button color="primary" (click)="openAddDoctorDialog()">Add Doctor</button>
+    <button mat-raised-button color="primary" (click)="openAddDoctorDialog()">
+      <mat-icon>add</mat-icon> Add Doctor
+    </button>
   </div>
 
+  <!-- Table Container -->
   <div class="doctor-table-container mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" class="mat-table">
+    <table mat-table [dataSource]="dataSource" class="mat-table responsive-table">
 
       <!-- ID Column -->
       <ng-container matColumnDef="Id">
@@ -40,12 +44,12 @@
       <ng-container matColumnDef="Action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let doctor">
-          <button mat-icon-button [routerLink]="['/doctorDetails', doctor.id]">
+          <button mat-icon-button [routerLink]="['/doctorDetails', doctor.id]" matTooltip="Voir les détails">
             <mat-icon>launch</mat-icon>
           </button>
-           <button mat-icon-button color="warn" (click)="delete(doctor.id)">
+          <button mat-icon-button color="warn" (click)="delete(doctor.id)" matTooltip="Supprimer le médecin">
             <mat-icon>delete</mat-icon>
-          </button> 
+          </button>
         </td>
       </ng-container>
 
@@ -53,6 +57,13 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <mat-paginator [length]="dataSource.length" [pageSize]="20" showFirstLastButtons></mat-paginator>
+
+    <!-- Pagination -->
+    <mat-paginator
+      [length]="dataSource.length"
+      [pageSize]="20"
+      showFirstLastButtons
+      aria-label="Table Pagination">
+    </mat-paginator>
   </div>
 </div>

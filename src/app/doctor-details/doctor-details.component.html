@@ -1,51 +1,110 @@
 <div *ngIf="doctor" class="doctor-card">
-  <h1>Détails du médecin</h1>
-  <div class="doctor-info">
-    <p><strong>ID:</strong> {{ doctor.id }}</p>
-    <p><strong>Nom:</strong> {{ doctor.Name }}</p>
-    <p><strong>Spécialisation:</strong> {{ doctor.Specialization }}</p>
-    <p><strong>Email:</strong> {{ doctor.Email }}</p>
-    <p><strong>Mobile:</strong> {{ doctor.Mobile }}</p>
+    <h1>Doctor Details</h1>
+    <div class="doctor-info">
+      <div class="info-item">
+        <i class="fas fa-id-badge"></i>
+        <p><strong>ID:</strong> {{ doctor.id }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-user"></i>
+        <p><strong>Nom:</strong> {{ doctor.Name }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-stethoscope"></i>
+        <p><strong>Spécialisation:</strong> {{ doctor.Specialization }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <p><strong>Email:</strong> {{ doctor.Email }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <p><strong>Mobile:</strong> {{ doctor.Mobile }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-venus-mars"></i>
+        <p><strong>Gender:</strong> {{ doctor.Gender }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-graduation-cap"></i>
+        <p><strong>Education:</strong> {{ doctor.Education }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-briefcase"></i>
+        <p><strong>Experience:</strong> {{ doctor.Experience }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-clock"></i>
+        <p><strong>Duty Timing:</strong> {{ doctor.DutyTiming }}</p>
+      </div>
+    </div>
+  
+    <!-- Bouton Modifier -->
+    <button class="btn-edit" (click)="openEditPopup()">Modifier</button>
   </div>
   
-  <!-- Bouton Modifier -->
-  <button class="btn-edit" (click)="openEditPopup()">Modifier</button>
-</div>
-
-<!-- Si aucune information n'est trouvée -->
-<div *ngIf="!doctor" class="no-doctor">
-  <p>Le médecin n'a pas été trouvé.</p>
-</div>
-
-<!-- Pop-up -->
-<div *ngIf="isPopupOpen" class="popup-overlay">
-  <div class="popup-content">
-    <h2>Modifier le médecin</h2>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="name">Nom :</label>
-        <input id="name" formControlName="Name" type="text">
-      </div>
-
-      <div class="form-group">
-        <label for="specialization">Spécialisation :</label>
-        <input id="specialization" formControlName="Specialization" type="text">
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email :</label>
-        <input id="email" formControlName="Email" type="email">
-      </div>
-
-      <div class="form-group">
-        <label for="mobile">Mobile :</label>
-        <input id="mobile" formControlName="Mobile" type="text">
-      </div>
-
-      <div class="form-actions">
-        <button type="submit" class="btn-submit">Sauvegarder</button>
-        <button type="button" class="btn-cancel" (click)="closePopup()">Annuler</button>
-      </div>
-    </form>
+  <!-- Si aucune information n'est trouvée -->
+  <div *ngIf="!doctor" class="no-doctor">
+    <p>Le médecin n'a pas été trouvé.</p>
   </div>
-</div>
+  
+  <div *ngIf="isPopupOpen" class="popup-overlay">
+    <div class="popup-content">
+      <div class="popup-header">
+        <h2><i class="fas fa-edit"></i> Update Doctor</h2>
+        <button class="btn-close" (click)="closePopup()">✖</button>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="popup-form">
+        <div class="form-group">
+          <label for="name"><i class="fas fa-user"></i> Nom :</label>
+          <input id="name" formControlName="Name" type="text" placeholder="Entrez le nom...">
+        
+            <label for="gender"><i class="fas fa-venus-mars"></i> Gender :</label>
+            <input id="gender" formControlName="Gender" type="text" placeholder="Entrez le genre...">
+
+        </div>
+        <div class="form-group">
+          <label for="specialization"><i class="fas fa-stethoscope"></i> Spécialisation :</label>
+          <input id="specialization" formControlName="Specialization" type="text" placeholder="Entrez la spécialisation...">
+        </div>
+        
+        <!-- Mobile and Email in a row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobile"><i class="fas fa-phone"></i> Mobile :</label>
+            <input id="mobile" formControlName="Mobile" type="text" placeholder="Entrez le numéro de mobile...">
+          </div>
+          <div class="form-group">
+            <label for="email"><i class="fas fa-envelope"></i> Email :</label>
+            <input id="email" formControlName="Email" type="email" placeholder="Entrez l'email...">
+          </div>
+        </div>
+  
+        <!-- Gender, Education, and Experience -->
+        <div class="form-row">
+        
+          <div class="form-group">
+            <label for="education"><i class="fas fa-graduation-cap"></i> Education :</label>
+            <input id="education" formControlName="Education" type="text" placeholder="Entrez l'éducation...">
+          </div>
+          <div class="form-group">
+            <label for="experience"><i class="fas fa-briefcase"></i> Experience :</label>
+            <input id="experience" formControlName="Experience" type="text" placeholder="Entrez l'expérience...">
+          </div>
+        </div>
+  
+        <!-- Duty Timing -->
+        <div class="form-group">
+          <label for="dutyTiming"><i class="fas fa-clock"></i> Duty Timing :</label>
+          <input id="dutyTiming" formControlName="DutyTiming" type="text" placeholder="Entrez les horaires...">
+        </div>
+  
+        <!-- Submit and Cancel Buttons -->
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">Sauvegarder</button>
+          <button type="button" class="btn-cancel" (click)="closePopup()">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

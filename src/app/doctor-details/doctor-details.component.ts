@@ -26,13 +26,20 @@ export class DoctorDetailsComponent implements OnInit {
 
     if (this.idcourant) {
       this.doctorService.getDoctorById(this.idcourant).subscribe((Doctor) => {
+
         this.doctor = Doctor;
+
         this.form = new FormGroup({
             id: new FormControl(Doctor.id, [Validators.required]),
             Name: new FormControl(Doctor.Name, [Validators.required]),
+            Gender: new FormControl(Doctor.Gender, [Validators.required]),
             Specialization: new FormControl(Doctor.Specialization, [Validators.required]),
             Email: new FormControl(Doctor.Email, [Validators.required]),
             Mobile: new FormControl(Doctor.Mobile, [Validators.required]),
+            Education: new FormControl(Doctor.Education, [Validators.required]),
+            Experience: new FormControl(Doctor.Experience, [Validators.required]),
+            DutyTiming: new FormControl(Doctor.DutyTiming, [Validators.required]),
+
           });
       });
     }
