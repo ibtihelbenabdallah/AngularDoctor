@@ -15,6 +15,7 @@ export class AddDoctorDialogComponent {
   specializationData = ['General Medicine', 'Cardiology', 'Neurology'];
   experienceData = ['1+ years', '3+ years', '5+ years'];
   dutyTimingsData = ['08:00 AM - 05:00 PM', '10:00 AM - 07:00 PM'];
+  dataSource: any;
 
   constructor(
     private fb: FormBuilder,
@@ -41,13 +42,22 @@ export class AddDoctorDialogComponent {
   addDoctor(): void {
     if (this.addDoctorForm.valid) {
       const doctorData = this.addDoctorForm.value;
-      // Call service to save doctor
+  
+      // Ajouter le médecin via le service
       this.doctorService.AddDoctor(doctorData).subscribe(response => {
         console.log('Doctor added successfully!', response);
         this.dialogRef.close();
+        
+        // Rafraîchir la liste des médecins avec l'ID généré
+        this.dialogRef.afterClosed().subscribe(() => {
+          this.doctorService.GetAll().subscribe((doctors) => {
+            // Mettre à jour la source des données avec la liste complète des médecins
+            this.dataSource.push(response);  // Ajoute le nouveau médecin à la liste existante
+            this.dataSource = [...this.dataSource];  // Force la détection des changements dans le tableau
+          });
+        });
       }, error => {
         console.error('Error adding doctor', error);
       });
     }
-  }
-}
+  }}

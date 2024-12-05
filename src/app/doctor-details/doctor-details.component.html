@@ -1,11 +1,51 @@
-<div *ngIf="doctor">
-    <h2>Details for Doctor: {{ doctor.Name }}</h2>
-    <p><strong>ID:</strong> {{ doctor.Id }}</p>
-    <p><strong>Name:</strong> {{ doctor.Name }}</p>
-    <p><strong>Specialization:</strong> {{ doctor.Specialization }}</p>
+<div *ngIf="doctor" class="doctor-card">
+  <h1>Détails du médecin</h1>
+  <div class="doctor-info">
+    <p><strong>ID:</strong> {{ doctor.id }}</p>
+    <p><strong>Nom:</strong> {{ doctor.Name }}</p>
+    <p><strong>Spécialisation:</strong> {{ doctor.Specialization }}</p>
     <p><strong>Email:</strong> {{ doctor.Email }}</p>
     <p><strong>Mobile:</strong> {{ doctor.Mobile }}</p>
   </div>
   
+  <!-- Bouton Modifier -->
+  <button class="btn-edit" (click)="openEditPopup()">Modifier</button>
+</div>
 
-  
+<!-- Si aucune information n'est trouvée -->
+<div *ngIf="!doctor" class="no-doctor">
+  <p>Le médecin n'a pas été trouvé.</p>
+</div>
+
+<!-- Pop-up -->
+<div *ngIf="isPopupOpen" class="popup-overlay">
+  <div class="popup-content">
+    <h2>Modifier le médecin</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nom :</label>
+        <input id="name" formControlName="Name" type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="specialization">Spécialisation :</label>
+        <input id="specialization" formControlName="Specialization" type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email :</label>
+        <input id="email" formControlName="Email" type="email">
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile :</label>
+        <input id="mobile" formControlName="Mobile" type="text">
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Sauvegarder</button>
+        <button type="button" class="btn-cancel" (click)="closePopup()">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -14,12 +14,20 @@ export class DoctorService {
       return this.httpClient.get<Doctor[]>('http://localhost:3000/Doctor')
     }
   
-    AddDoctor(d:Doctor) : Observable<void> 
-    {
-      return this.httpClient.post<void>('http://localhost:3000/Doctor',d);
+    AddDoctor(d: Doctor): Observable<Doctor> {
+      return this.httpClient.post<Doctor>('http://localhost:3000/Doctor', d);
     }
-    getDoctorById(id: string): Observable<Doctor> {
+
+    deleteDoctor(id: string): Observable<void> {
+      return this.httpClient.delete<void>(`http://localhost:3000/Doctor/${id}`);
+    }
+    updateDoctor(d:Doctor,id:string) : Observable<void> 
+    {
+      return this.httpClient.put<void>(`http://localhost:3000/Doctor/${id}`, d);
+    }
+    getDoctorById(id:string) : Observable<Doctor> 
+    {
       return this.httpClient.get<Doctor>(`http://localhost:3000/Doctor/${id}`);
     }
-  
+
   }
