@@ -22,5 +22,100 @@
       "Experience": "5+ years",
       "DutyTiming": "10:00 AM - 07:00 PM"
     }
+  ],
+  "Patient": [
+    {
+      "id": "1",
+      "Name": "ssssssssssssssssssssssssssssss",
+      "Email": "laura90@mail.com",
+      "Mobile": "(717) 555-4444",
+      "Disease": "Eye Checkup",
+      "Gender": "Female",
+      "BloodGroup": "O+"
+    },
+    {
+      "id": "2",
+      "Name": "Milka",
+      "Text": "Milka",
+      "DOB": "2000-04-05T00:00:00.000Z",
+      "Mobile": "(717) 555-4445",
+      "Email": "milka40@sample.com",
+      "Address": "908 W. Capital Way",
+      "Disease": "Bone Fracture",
+      "DepartmentName": "ORTHOPEDICS",
+      "BloodGroup": "AB+",
+      "Gender": "Female",
+      "Symptoms": "Swelling or bruising over a bone, Pain in the injured area"
+    },
+    {
+      "id": "3",
+      "Name": "Adams",
+      "Text": "Adams",
+      "DOB": "1985-03-03T00:00:00.000Z",
+      "Mobile": "(717) 555-4454",
+      "Email": "adams89@rpy.com",
+      "Address": "722 Moss Bay Blvd.",
+      "Disease": "Eye and Spectacles",
+      "DepartmentName": "GENERAL",
+      "BloodGroup": "B+",
+      "Gender": "Male",
+      "Symptoms": "Frequent squinting, Eye fatigue or strain"
+    },
+    {
+      "id": "4",
+      "Name": "Janet",
+      "Text": "Janet",
+      "DOB": "2000-08-03T00:00:00.000Z",
+      "Mobile": "(717) 555-4544",
+      "Email": "janet79@rpy.com",
+      "Address": "4110 Old Redmond Rd.",
+      "Disease": "Biological Problem",
+      "DepartmentName": "GENERAL",
+      "BloodGroup": "B+",
+      "Gender": "Male",
+      "Symptoms": "Physical aches or pain, Memory difficulties or personality change"
+    },
+    {
+      "id": "5",
+      "Name": "Mercy",
+      "Text": "Mercy",
+      "DOB": "2005-05-29T00:00:00.000Z",
+      "Mobile": "(717) 555-5444",
+      "Email": "mercy60@sample.com",
+      "Address": "14 Garrett Hill",
+      "Disease": "Skin Hives",
+      "DepartmentName": "DERMATOLOGY",
+      "BloodGroup": "AB-",
+      "Gender": "Female",
+      "Symptoms": "Outbreak of swollen, pale red bumps or plaques"
+    },
+    {
+      "id": "6",
+      "Name": "Richa",
+      "Text": "Richa",
+      "DOB": "1989-11-29T00:00:00.000Z",
+      "Mobile": "(206) 555-4444",
+      "Email": "richa46@mail.com",
+      "Address": "Coventry House\nMiner Rd.",
+      "Disease": "Arm Fracture",
+      "DepartmentName": "ORTHOPEDICS",
+      "BloodGroup": "B+",
+      "Gender": "Female",
+      "Symptoms": "Swelling, warmth, or redness in the joint"
+    },
+    {
+      "id": "7",
+      "Name": "Maud Oliver",
+      "Text": "MaudOliver",
+      "DOB": "1989-11-29T00:00:00.000Z",
+      "Mobile": "(206) 666-4444",
+      "Email": "moud46@rpy.com",
+      "Address": "Coventry House\nMiner Rd.",
+      "Disease": "Racing heartbeat",
+      "DepartmentName": "CARDIOLOGY",
+      "BloodGroup": "B+",
+      "Gender": "Male",
+      "Symptoms": "A fluttering in your chest"
+    }
   ]
 }
