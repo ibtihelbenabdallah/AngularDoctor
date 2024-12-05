@@ -35,7 +35,8 @@ export class DoctorComponent implements OnInit {
   // Ouvrir le dialog pour ajouter un médecin
   openAddDoctorDialog(): void {
     const dialogRef = this.dialog.open(AddDoctorDialogComponent, {
-      width: '400px'
+      width: '600px', // Set the width
+      height: '700px', 
     });
 
    
