@@ -1,0 +1,81 @@
+<h2 mat-dialog-title>New Patient</h2>
+<mat-dialog-content>
+  <form [formGroup]="addPatientForm" class="new-doctor-form">
+  
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Patient Name</mat-label>
+      <input matInput formControlName="Name" />
+      <mat-error *ngIf="addPatientForm.get('Name')?.hasError('required')">Name is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="Email" />
+        <mat-error *ngIf="addPatientForm.get('Email')?.hasError('email')">Invalid email address</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput formControlName="Mobile" placeholder="Enter 8-digit number" />
+        <mat-error *ngIf="addPatientForm.get('Mobile')?.hasError('pattern')">Invalid mobile number</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Disease</mat-label>
+        <input matInput formControlName="Disease" />
+        <mat-error *ngIf="addPatientForm.get('Disease')?.hasError('required')">Disease is required</mat-error>
+      </mat-form-field>
+
+  
+
+    <div class="gender-container">
+      <label class="gender-label">Gender</label>
+      <mat-radio-group formControlName="Gender" class="gender-group">
+        <mat-radio-button value="Male">Male</mat-radio-button>
+        <mat-radio-button value="Female">Female</mat-radio-button>
+      </mat-radio-group>
+      <mat-error *ngIf="addPatientForm.get('Gender')?.hasError('required')">Gender is required</mat-error>
+    </div>
+
+    
+    <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>BloodGroup</mat-label>
+        <input matInput formControlName="BloodGroup" />
+        <mat-error *ngIf="addPatientForm.get('BloodGroup')?.hasError('required')">BloodGroup is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>DutyTiming</mat-label>
+        <input matInput formControlName="DutyTiming" />
+        <mat-error *ngIf="addPatientForm.get('DutyTiming')?.hasError('required')">DutyTiming is required</mat-error>
+      </mat-form-field>
+
+
+
+    
+
+
+   
+
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>DOB</mat-label>
+      <input matInput formControlName="DOB" />
+      <mat-error *ngIf="addPatientForm.get('DOB')?.hasError('required')">DOB is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="Address" />
+        <mat-error *ngIf="addPatientForm.get('Address')?.hasError('required')">Address is required</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Symptoms</mat-label>
+        <input matInput formControlName="Symptoms" />
+        <mat-error *ngIf="addPatientForm.get('Symptoms')?.hasError('required')">Symptoms is required</mat-error>
+      </mat-form-field>
+    
+      
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="warn" (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" [disabled]="addPatientForm.invalid" (click)="addPatient()">Save</button>
+</mat-dialog-actions>

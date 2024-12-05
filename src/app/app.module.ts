@@ -20,6 +20,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddDoctorDialogComponent } from './add-doctor-dialog/add-doctor-dialog.component';  // Si ce composant est dans un autre fichier, importez-le
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import { PatientComponent } from './patient/patient.component';
+import { AddPatientDialogComponent } from './add-patient-dialog/add-patient-dialog.component';
+import { PatientDetailsComponent } from './patient-details/patient-details.component';
 
 
 
@@ -30,7 +33,10 @@ import { MatSelectModule } from '@angular/material/select';
     SidebarComponent,
     DoctorComponent,
     DoctorDetailsComponent,
-    AddDoctorDialogComponent
+    AddDoctorDialogComponent,
+    PatientComponent,
+    AddPatientDialogComponent,
+    PatientDetailsComponent
   ],
   imports: [
     BrowserModule,
