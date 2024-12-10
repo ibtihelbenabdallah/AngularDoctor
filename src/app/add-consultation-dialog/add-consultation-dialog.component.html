@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="patient">Select Patient:</label>
+      <select id="patient" [(ngModel)]="consultation.PatientID" name="PatientID" required>
+        <option *ngFor="let patient of patients" [value]="patient.id">{{ patient.Name }}</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="doctor">Select Doctor:</label>
+      <select id="doctor" [(ngModel)]="consultation.DoctorID" name="DoctorID" required>
+        <option *ngFor="let doctor of doctors" [value]="doctor.id">{{ doctor.Name }}</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="date">Date:</label>
+      <input type="datetime-local" id="date" [(ngModel)]="consultation.Date" name="Date" required />
+    </div>
+  
+    <div>
+      <label for="reason">Reason:</label>
+      <input type="text" id="reason" [(ngModel)]="consultation.Reason" name="Reason" required />
+    </div>
+  
+    <div>
+      <label for="notes">Notes:</label>
+      <textarea id="notes" [(ngModel)]="consultation.Notes" name="Notes"></textarea>
+    </div>
+  
+    <button type="submit">Add Consultation</button>
+  </form>
+  

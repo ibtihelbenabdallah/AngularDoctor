@@ -47,27 +47,38 @@
   <div *ngIf="!doctor" class="no-doctor">
     <p>Le médecin n'a pas été trouvé.</p>
   </div>
-  
+
+
+
+  <!-- pop up -->
   <div *ngIf="isPopupOpen" class="popup-overlay">
     <div class="popup-content">
       <div class="popup-header">
         <h2><i class="fas fa-edit"></i> Update Doctor</h2>
-        <button class="btn-close" (click)="closePopup()">✖</button>
+        <div fxLayout="row" fxLayoutAlign="end center" >
+        <button fxLayout="row" fxLayoutAlign="end center" class="btn-close" (click)="closePopup()">✖</button>
+    
       </div>
       <form [formGroup]="form" (ngSubmit)="onSubmit()" class="popup-form">
-        <div class="form-group">
-          <label for="name"><i class="fas fa-user"></i> Nom :</label>
-          <input id="name" formControlName="Name" type="text" placeholder="Entrez le nom...">
-        
+        <!-- Gender and Name in a row -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Nom :</label>
+                <input id="name" formControlName="Name" type="text" placeholder="Entrez le nom...">
+              </div>
+          <div class="form-group">
             <label for="gender"><i class="fas fa-venus-mars"></i> Gender :</label>
             <input id="gender" formControlName="Gender" type="text" placeholder="Entrez le genre...">
-
+          </div>
+       
         </div>
-        <div class="form-group">
+  
+        <!-- Specialty (longer input) -->
+        <div class="form-group form-group-long">
           <label for="specialization"><i class="fas fa-stethoscope"></i> Spécialisation :</label>
           <input id="specialization" formControlName="Specialization" type="text" placeholder="Entrez la spécialisation...">
         </div>
-        
+  
         <!-- Mobile and Email in a row -->
         <div class="form-row">
           <div class="form-group">
@@ -80,9 +91,8 @@
           </div>
         </div>
   
-        <!-- Gender, Education, and Experience -->
+        <!-- Education and Experience in a row -->
         <div class="form-row">
-        
           <div class="form-group">
             <label for="education"><i class="fas fa-graduation-cap"></i> Education :</label>
             <input id="education" formControlName="Education" type="text" placeholder="Entrez l'éducation...">
@@ -93,8 +103,8 @@
           </div>
         </div>
   
-        <!-- Duty Timing -->
-        <div class="form-group">
+        <!-- Duty Timing (longer input) -->
+        <div class="form-group form-group-long">
           <label for="dutyTiming"><i class="fas fa-clock"></i> Duty Timing :</label>
           <input id="dutyTiming" formControlName="DutyTiming" type="text" placeholder="Entrez les horaires...">
         </div>

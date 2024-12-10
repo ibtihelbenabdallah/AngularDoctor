@@ -23,7 +23,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { PatientComponent } from './patient/patient.component';
 import { AddPatientDialogComponent } from './add-patient-dialog/add-patient-dialog.component';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
-
+import { AcceuilComponent } from './acceuil/acceuil.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { LoginComponent } from './login/login.component';
+import { AddConsultationDialogComponent } from './add-consultation-dialog/add-consultation-dialog.component';
+import { FormsModule } from '@angular/forms'; // <-- Import FormsModule
 
 
 
@@ -36,10 +44,13 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
     AddDoctorDialogComponent,
     PatientComponent,
     AddPatientDialogComponent,
-    PatientDetailsComponent
+    PatientDetailsComponent,
+    AcceuilComponent,
+    LoginComponent,
+    AddConsultationDialogComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
   MatDialogModule,
   AppRoutingModule,
   HttpClientModule,
@@ -54,7 +65,15 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
   ReactiveFormsModule,
   MatCardModule,
   MatRadioModule,
-  MatSelectModule
+  MatSelectModule,
+  MatToolbarModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatListModule,
+  MatDividerModule,
+  FormsModule
+
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -58,6 +58,10 @@ p {
 .btn-edit:hover {
   background-color: #3498db;
 }
+
+
+/* Pop-up Overlay */
+
 /* Pop-up Overlay */
 .popup-overlay {
   position: fixed;
@@ -77,14 +81,24 @@ p {
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  width: 450px;
-  max-height: 80%; /* Limite la hauteur de la popup */
-  overflow-y: auto; /* Ajoute un scroll vertical si nécessaire */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 500px; /* Increased width */
+  max-height: 80%; /* Limit height */
+  overflow-y: auto; /* Add vertical scroll if necessary */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Add shadow */
+  border: 2px solid #3498db; /* Add frame */
   position: relative;
 }
 
-/* Form Row (for Mobile/Email and Education/Experience) */
+/* Form Group (for longer inputs) */
+.form-group-long {
+  width: 100%; /* Full width for long inputs */
+}
+
+.form-group-long input {
+  width: calc(100% - 20px); /* Account for padding and border */
+}
+
+/* Form Row (for fields in a row) */
 .form-row {
   display: flex;
   justify-content: space-between;
@@ -93,7 +107,7 @@ p {
 }
 
 .form-group {
-  width: 48%; /* Prend 48% de la largeur pour deux éléments côte à côte */
+  width: 48%; /* 48% width for two items in a row */
   margin-bottom: 15px;
 }
 
@@ -117,33 +131,6 @@ p {
 
 .form-group input::placeholder {
   color: #999;
-}
-
-/* Pop-up Header */
-.popup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.popup-header h2 {
-  font-size: 1.5rem;
-  color: #3498db;
-  margin: 0;
-}
-
-.popup-header .btn-close {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: #e74c3c;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.popup-header .btn-close:hover {
-  transform: scale(1.2);
 }
 
 /* Scroll Customization (optional) */
