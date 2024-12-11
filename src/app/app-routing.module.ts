@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: '', component: AcceuilComponent }, 
   { path: 'login', component: LoginComponent }, 
   { path: 'consultation', component:  AddConsultationDialogComponent},  // Login route
-  // Login route
   { path: 'doctors', component: DoctorComponent },
   { path: 'doctorDetails/:id', component: DoctorDetailsComponent },
   { path: 'patients', component: PatientComponent },
