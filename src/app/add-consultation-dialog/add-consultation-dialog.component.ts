@@ -28,8 +28,9 @@ export class AddConsultationDialogComponent {
       PatientName: ['', Validators.required],
       DoctorName: ['', Validators.required],
       Date: ['', Validators.required],
+      ConsultationTime: ['', Validators.required],
       Reason: ['', Validators.required],
-      Notes: ['']
+      Notes: ['',Validators.required]
     });
     
 

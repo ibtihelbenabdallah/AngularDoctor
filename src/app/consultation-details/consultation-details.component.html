@@ -2,65 +2,40 @@
   <h1>Consultation Details</h1>
   <div class="consultation-info">
     <div class="info-item">
+      <i class="fas fa-id-card"></i>
       <p><strong>ID:</strong> {{ consultation.id }}</p>
     </div>
     <div class="info-item">
+      <i class="fas fa-user"></i>
       <p><strong>Nom du Patient:</strong> {{ consultation.PatientName }}</p>
     </div>
     <div class="info-item">
+      <i class="fas fa-user-md"></i>
       <p><strong>Médecin:</strong> {{ consultation.DoctorName }}</p>
     </div>
     <div class="info-item">
+      <i class="fas fa-calendar-alt"></i>
       <p><strong>Date:</strong> {{ consultation.Date }}</p>
     </div>
-  
     <div class="info-item">
+      <i class="fas fa-clock"></i>
+      <p><strong>Heure de Consultation:</strong> {{ consultation.ConsultationTime }}</p>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-notes-medical"></i>
+      <p><strong>Reason:</strong> {{ consultation.Reason }}</p>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-comments"></i>
       <p><strong>Notes:</strong> {{ consultation.Notes }}</p>
     </div>
   </div>
 
+  <!-- Bouton Modifier -->
   <button class="btn-edit" (click)="openEditPopup()">Modifier</button>
 </div>
 
-<div *ngIf="isPopupOpen" class="popup-overlay">
-  <div class="popup-content">
-    <div class="popup-header">
-      <h2>Modifier Consultation</h2>
-      <button class="btn-close" (click)="closePopup()">✖</button>
-    </div>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="popup-form">
-      <div class="form-group">
-        <label for="PatientName">Nom du Patient :</label>
-        <select id="PatientName" formControlName="PatientName">
-          <option *ngFor="let patient of patients" [value]="patient.Name">
-            {{ patient.Name }}
-          </option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="DoctorName">Médecin :</label>
-        <select id="DoctorName" formControlName="DoctorName">
-          <option *ngFor="let doctor of doctors" [value]="doctor.Name">
-            {{ doctor.Name }}
-          </option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="Date">Date :</label>
-        <input id="Date" formControlName="Date" type="Date" />
-      </div>
-      <div class="form-group">
-        <label for="ConsultationTime">Heure :</label>
-        <input id="ConsultationTime" formControlName="ConsultationTime" type="time" /> <!-- Time input -->
-      </div>
-      <div class="form-group">
-        <label for="Notes">Notes :</label>
-        <textarea id="Notes" formControlName="Notes"></textarea>
-      </div>
-      <div class="form-actions">
-        <button type="submit" class="btn-submit">Sauvegarder</button>
-        <button type="button" class="btn-cancel" (click)="closePopup()">Annuler</button>
-      </div>
-    </form>
-  </div>
+<!-- Si aucune information n'est trouvée -->
+<div *ngIf="!consultation" class="no-consultation">
+  <p>Aucune consultation trouvée.</p>
 </div>

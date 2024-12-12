@@ -1,4 +1,7 @@
 /* General Styles */
+  
+
+  
 body {
     font-family: 'Roboto', sans-serif;
     background: #f4f7fb;
@@ -18,7 +21,7 @@ body {
   }
   
   /* Doctor Card */
-  .doctor-card {
+  .consultation-card {
     background: #ffffff;
     padding: 20px;
     border-radius: 10px;
@@ -176,4 +179,3 @@ body {
   .btn-cancel:hover {
     background-color: #c0392b;
   }
-  

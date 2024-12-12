@@ -45,7 +45,9 @@
 
     <mat-form-field appearance="outline" floatLabel="always">
       <mat-label>Notes</mat-label>
-      <textarea matInput formControlName="Notes"></textarea>
+      
+      <input matInput formControlName="Notes" required />
+      <mat-error *ngIf="addConsultationForm.get('Note')?.hasError('required')">Note is required</mat-error>
     </mat-form-field>
   </form>
 </mat-dialog-content>

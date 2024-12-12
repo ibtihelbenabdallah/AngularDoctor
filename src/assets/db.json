@@ -97,20 +97,13 @@
   ],
   "Consultation": [
     {
-      "id": "b50f",
-      "PatientName": "Adams",
+      "id": "d6c1",
+      "PatientName": "Milka",
       "DoctorName": "malak",
       "Date": "1212-12-12",
-      "Reason": "o",
-      "Notes": "o"
-    },
-    {
-      "PatientName": "Richa",
-      "DoctorName": "malak derbel",
-      "Date": "2024-12-13",
-      "ConsultationTime": "02:00",
-      "Notes": "$$$$$",
-      "id": "b5f6"
+      "ConsultationTime": "12:12",
+      "Reason": "kkmom",
+      "Notes": "jomom"
     }
   ]
 }

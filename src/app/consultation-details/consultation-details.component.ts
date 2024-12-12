@@ -60,7 +60,8 @@ export class ConsultationDetailsComponent implements OnInit {
       DoctorName: [this.consultation?.DoctorName || '', Validators.required],
       Date: [this.consultation?.Date || '', Validators.required],
       ConsultationTime: [this.consultation?.ConsultationTime || '', Validators.required], // Add time field
-      Notes: [this.consultation?.Notes || '']
+      Notes: [this.consultation?.Notes || ''],
+      Reason: [this.consultation?.Reason || '']
     });
   }
 

@@ -10,7 +10,7 @@ import { AddConsultationDialogComponent } from '../add-consultation-dialog/add-c
 })
 export class ConsultationsComponent implements OnInit {
   consultations: any[] = [];
-  displayedColumns: string[] = ['id', 'patientName', 'doctorName', 'date', 'reason', 'notes', 'actions'];
+  displayedColumns: string[] = ['id', 'patientName', 'doctorName', 'date',  'actions'];
 
   constructor(
     private consultationService: ConsultationService,
