@@ -1,58 +1,62 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ConsultationService } from '../services/consultation.service';
 import { DoctorService } from '../services/doctor.service';
 import { PatientService } from '../services/patient.service';
-import { ConsultationService } from '../services/consultation.service';
-import { Consultation } from '../models/consultation';
 
 @Component({
   selector: 'app-add-consultation-dialog',
   templateUrl: './add-consultation-dialog.component.html',
   styleUrls: ['./add-consultation-dialog.component.css']
 })
-export class AddConsultationDialogComponent implements OnInit {
-
- doctors: any[] = [];
+export class AddConsultationDialogComponent {
+  consultation: any = {};
   patients: any[] = [];
-  consultation: Consultation = {
-    PatientID: '',
-    DoctorID: '',
-    Date: '',
-    Reason: '',
-    Notes: ''
-  };
-
+  doctors: any[] = [];
+  addConsultationForm: FormGroup;
 
   constructor(
+    public dialogRef: MatDialogRef<AddConsultationDialogComponent>,
+    private consultationService: ConsultationService,
     private doctorService: DoctorService,
     private patientService: PatientService,
-    private consultationService: ConsultationService
-  ) {}
-
-  ngOnInit(): void {
-    this.fetchDoctors();
-    this.fetchPatients();
-  }
-
-  fetchDoctors(): void {
-    this.doctorService.GetAll().subscribe(data => {
-      this.doctors = data;
+    private fb: FormBuilder
+  ) {
+    this.addConsultationForm = this.fb.group({
+      PatientID: ['', Validators.required],
+      DoctorID: ['', Validators.required],
+      Date: ['', Validators.required],
+      Reason: ['', Validators.required],
+      Notes: ['']
     });
+    this.loadPatients();
+    this.loadDoctors();
   }
 
-  fetchPatients(): void {
-    this.patientService.GetAll().subscribe(data => {
+  loadPatients(): void {
+    this.patientService.GetAll().subscribe((data) => {
       this.patients = data;
     });
   }
 
-  onSubmit(): void {
-    this.consultationService.addConsultation(this.consultation).subscribe((response: any) => {
-      console.log('Consultation added:', response);
-      alert('Consultation successfully added!');
+  loadDoctors(): void {
+    this.doctorService.GetAll().subscribe((data) => {
+      this.doctors = data;
     });
   }
 
+  onSubmit(): void {
+    if (this.addConsultationForm.valid) {
+      this.consultationService.addConsultation(this.addConsultationForm.value).subscribe(() => {
+        this.dialogRef.close(true);
+      });
+    } else {
+      alert('Please fill out all required fields.');
+    }
+  }
 
-
-
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
 }

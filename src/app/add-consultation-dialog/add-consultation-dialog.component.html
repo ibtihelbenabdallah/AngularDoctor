@@ -1,33 +1,43 @@
-<form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="patient">Select Patient:</label>
-      <select id="patient" [(ngModel)]="consultation.PatientID" name="PatientID" required>
-        <option *ngFor="let patient of patients" [value]="patient.id">{{ patient.Name }}</option>
-      </select>
-    </div>
-  
-    <div>
-      <label for="doctor">Select Doctor:</label>
-      <select id="doctor" [(ngModel)]="consultation.DoctorID" name="DoctorID" required>
-        <option *ngFor="let doctor of doctors" [value]="doctor.id">{{ doctor.Name }}</option>
-      </select>
-    </div>
-  
-    <div>
-      <label for="date">Date:</label>
-      <input type="datetime-local" id="date" [(ngModel)]="consultation.Date" name="Date" required />
-    </div>
-  
-    <div>
-      <label for="reason">Reason:</label>
-      <input type="text" id="reason" [(ngModel)]="consultation.Reason" name="Reason" required />
-    </div>
-  
-    <div>
-      <label for="notes">Notes:</label>
-      <textarea id="notes" [(ngModel)]="consultation.Notes" name="Notes"></textarea>
-    </div>
-  
-    <button type="submit">Add Consultation</button>
+<h2 mat-dialog-title>Add Consultation</h2>
+<mat-dialog-content>
+  <form [formGroup]="addConsultationForm" class="new-consultation-form">
+    
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label><i class="fas fa-user"></i> Select Patient</mat-label>
+      <mat-select formControlName="PatientID" required>
+        <mat-option *ngFor="let patient of patients" [value]="patient.id">{{ patient.Name }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="addConsultationForm.get('PatientID')?.hasError('required')">Patient is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label><i class="fas fa-user-md"></i> Select Doctor</mat-label>
+      <mat-select formControlName="DoctorID" required>
+        <mat-option *ngFor="let doctor of doctors" [value]="doctor.id">{{ doctor.Name }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="addConsultationForm.get('DoctorID')?.hasError('required')">Doctor is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label><i class="fas fa-calendar-alt"></i> Date</mat-label>
+      <input matInput type="datetime-local" formControlName="Date" required />
+      <mat-error *ngIf="addConsultationForm.get('Date')?.hasError('required')">Date is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label><i class="fas fa-info-circle"></i> Reason</mat-label>
+      <input matInput formControlName="Reason" required />
+      <mat-error *ngIf="addConsultationForm.get('Reason')?.hasError('required')">Reason is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label><i class="fas fa-sticky-note"></i> Notes</mat-label>
+      <textarea matInput formControlName="Notes"></textarea>
+    </mat-form-field>
+
   </form>
-  
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="warn" (click)="closeDialog()">Cancel</button>
+  <button mat-raised-button color="primary" [disabled]="addConsultationForm.invalid" (click)="onSubmit()">Save</button>
+</mat-dialog-actions>

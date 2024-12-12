@@ -31,7 +31,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { LoginComponent } from './login/login.component';
 import { AddConsultationDialogComponent } from './add-consultation-dialog/add-consultation-dialog.component';
-import { FormsModule } from '@angular/forms'; // <-- Import FormsModule
+import { FormsModule } from '@angular/forms';
+import { ConsultationsComponent } from './consultation/consultation.component';
+import { ConsultationDetailsComponent } from './consultation-details/consultation-details.component'; // <-- Import FormsModule
 
 
 
@@ -47,7 +49,9 @@ import { FormsModule } from '@angular/forms'; // <-- Import FormsModule
     PatientDetailsComponent,
     AcceuilComponent,
     LoginComponent,
-    AddConsultationDialogComponent
+    AddConsultationDialogComponent,
+    ConsultationsComponent,
+    ConsultationDetailsComponent
   ],
   imports: [
   BrowserModule,

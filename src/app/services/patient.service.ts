@@ -30,4 +30,5 @@ export class PatientService {
     return this.httpClient.get<Patient>(`http://localhost:3000/Patient/${id}`);
   }
 
+  
 }

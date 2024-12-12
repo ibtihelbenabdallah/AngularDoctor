@@ -7,10 +7,15 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { LoginComponent } from './login/login.component';
 import { AddConsultationDialogComponent } from './add-consultation-dialog/add-consultation-dialog.component';
+import { ConsultationsComponent } from './consultation/consultation.component';
+import { ConsultationDetailsComponent } from './consultation-details/consultation-details.component';
 
 const routes: Routes = [
   { path: '', component: AcceuilComponent }, 
   { path: 'login', component: LoginComponent }, 
+  { path: 'consultations', component: ConsultationsComponent },
+  { path: 'consultationDetails/:id', component: ConsultationDetailsComponent },
+
   { path: 'consultation', component:  AddConsultationDialogComponent},  // Login route
   { path: 'doctors', component: DoctorComponent },
   { path: 'doctorDetails/:id', component: DoctorDetailsComponent },

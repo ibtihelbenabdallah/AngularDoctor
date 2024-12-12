@@ -97,44 +97,28 @@
   ],
   "Consultation": [
     {
-      "id": "c1",
-      "PatientID": "2",
+      "patientName": "h",
+      "doctorName": "h",
+      "date": "2024-12-26",
+      "time": null,
+      "notes": "ololo",
+      "id": "c2"
+    },
+    {
+      "id": "6985",
+      "PatientID": "4",
       "DoctorID": "e74f",
-      "Date": "2024-12-10T10:00:00.000Z",
-      "Reason": "Follow-up on bone fracture recovery",
-      "Notes": "Patient showing signs of recovery. Continue prescribed physiotherapy."
+      "Date": "2024-12-14T20:45",
+      "Reason": "fever",
+      "Notes": "no"
     },
     {
-      "id": "c2",
-      "PatientID": "5",
-      "DoctorID": "ab55",
-      "Date": "2024-12-12T14:30:00.000Z",
-      "Reason": "Skin irritation and hives",
-      "Notes": "Prescribed antihistamines and recommended allergy testing."
-    },
-    {
-      "id": "fbcf",
-      "PatientID": "",
-      "DoctorID": "",
-      "Date": "",
-      "Reason": "",
-      "Notes": ""
-    },
-    {
-      "id": "6b12",
-      "PatientID": "3",
-      "DoctorID": "ab55",
-      "Date": "2024-12-14T23:11",
-      "Reason": "headtt",
-      "Notes": "br"
-    },
-    {
-      "id": "7352",
+      "id": "d013",
       "PatientID": "6",
-      "DoctorID": "e74f",
-      "Date": "2024-12-25T23:11",
-      "Reason": "mmmmm",
-      "Notes": "mm\n"
+      "DoctorID": "ab55",
+      "Date": "2000-07-12T12:00",
+      "Reason": "cough",
+      "Notes": "sirop\n"
     }
   ]
 }
