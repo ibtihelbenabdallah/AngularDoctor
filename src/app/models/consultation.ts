@@ -1,7 +1,7 @@
 export interface Consultation {
     id?: string; // Optional for new consultations
-    PatientID: string;
-    DoctorID: string;
+    PatientName: string;
+    DoctorName: string;
     Date: string; // ISO format
     Reason: string;
     Notes: string;

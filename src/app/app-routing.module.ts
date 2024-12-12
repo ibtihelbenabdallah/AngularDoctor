@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent }, 
   { path: 'consultations', component: ConsultationsComponent },
   { path: 'consultationDetails/:id', component: ConsultationDetailsComponent },
-
   { path: 'consultation', component:  AddConsultationDialogComponent},  // Login route
   { path: 'doctors', component: DoctorComponent },
   { path: 'doctorDetails/:id', component: DoctorDetailsComponent },

@@ -1,8 +1,9 @@
-
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute,Router  } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConsultationService } from '../services/consultation.service';
+import { DoctorService } from '../services/doctor.service';
+import { PatientService } from '../services/patient.service';
 
 @Component({
   selector: 'app-consultation-details',
@@ -14,37 +15,64 @@ export class ConsultationDetailsComponent implements OnInit {
   isPopupOpen = false;
   form!: FormGroup;
   consultationId: string | null = null;
-  doctorName: string = '';
-  patientName: string = '';
+  patients: any[] = [];
+  doctors: any[] = [];
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private consultationService: ConsultationService,
+    private doctorService: DoctorService,
+    private patientService: PatientService,
     private fb: FormBuilder
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    const consultationId = this.route.snapshot.paramMap.get('id');
-    if (consultationId) {
-      this.consultationService.getConsultationById(consultationId).subscribe(data => {
-        this.consultation = data;
-        this.initializeForm();
-      }, error => {
-        console.error("Error fetching consultation:", error);
-      });
+    this.consultationId = this.route.snapshot.paramMap.get('id');
+    if (this.consultationId) {
+      this.fetchConsultationDetails(this.consultationId);
     } else {
-      console.error("Consultation ID is undefined");
+      console.error('Consultation ID is undefined');
     }
+
+    // Load patients and doctors
+    this.loadPatients();
+    this.loadDoctors();
   }
 
-  // Initialize form with current consultation data
+  fetchConsultationDetails(id: string): void {
+    this.consultationService.getConsultationById(id).subscribe(
+      (data) => {
+        if (data) {
+          this.consultation = data;
+          this.initializeForm();
+        }
+      },
+      (error) => {
+        console.error('Error fetching consultation details:', error);
+      }
+    );
+  }
+
   initializeForm(): void {
     this.form = this.fb.group({
-      patientName: [this.consultation.patientName],
-      doctorName: [this.consultation.doctorName],
-      date: [this.consultation.date],
-      time: [this.consultation.time],
-      notes: [this.consultation.notes]
+      PatientName: [this.consultation?.PatientName || '', Validators.required],
+      DoctorName: [this.consultation?.DoctorName || '', Validators.required],
+      Date: [this.consultation?.Date || '', Validators.required],
+      ConsultationTime: [this.consultation?.ConsultationTime || '', Validators.required], // Add time field
+      Notes: [this.consultation?.Notes || '']
+    });
+  }
+
+  loadPatients(): void {
+    this.patientService.GetAll().subscribe((data) => {
+      this.patients = data;
+    });
+  }
+
+  loadDoctors(): void {
+    this.doctorService.GetAll().subscribe((data) => {
+      this.doctors = data;
     });
   }
 
@@ -58,14 +86,21 @@ export class ConsultationDetailsComponent implements OnInit {
 
   onSubmit(): void {
     if (this.form.valid) {
-      // Handle the form submission to update the consultation
       const updatedConsultation = this.form.value;
-      this.consultationService.updateConsultation(this.consultation.id, updatedConsultation).subscribe(() => {
-        this.isPopupOpen = false;
-        alert('Consultation updated successfully!');
-      }, error => {
-        console.error('Error updating consultation:', error);
-      });
+
+      this.consultationService.updateConsultation(this.consultation.id, updatedConsultation).subscribe(
+        (response) => {
+          // Update the local consultation object
+          this.consultation = { ...this.consultation, ...updatedConsultation };
+
+          // Close the popup and notify the user
+          this.isPopupOpen = false;
+          alert('Consultation updated successfully!');
+        },
+        (error) => {
+          console.error('Error updating consultation:', error);
+        }
+      );
     }
   }
 }

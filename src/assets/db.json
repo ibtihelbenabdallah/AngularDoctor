@@ -97,28 +97,20 @@
   ],
   "Consultation": [
     {
-      "patientName": "h",
-      "doctorName": "h",
-      "date": "2024-12-26",
-      "time": null,
-      "notes": "ololo",
-      "id": "c2"
+      "id": "b50f",
+      "PatientName": "Adams",
+      "DoctorName": "malak",
+      "Date": "1212-12-12",
+      "Reason": "o",
+      "Notes": "o"
     },
     {
-      "id": "6985",
-      "PatientID": "4",
-      "DoctorID": "e74f",
-      "Date": "2024-12-14T20:45",
-      "Reason": "fever",
-      "Notes": "no"
-    },
-    {
-      "id": "d013",
-      "PatientID": "6",
-      "DoctorID": "ab55",
-      "Date": "2000-07-12T12:00",
-      "Reason": "cough",
-      "Notes": "sirop\n"
+      "PatientName": "Richa",
+      "DoctorName": "malak derbel",
+      "Date": "2024-12-13",
+      "ConsultationTime": "02:00",
+      "Notes": "$$$$$",
+      "id": "b5f6"
     }
   ]
 }

@@ -1,5 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ConsultationService } from '../services/consultation.service';
 import { DoctorService } from '../services/doctor.service';
@@ -23,38 +23,61 @@ export class AddConsultationDialogComponent {
     private patientService: PatientService,
     private fb: FormBuilder
   ) {
+    // Initialize form
     this.addConsultationForm = this.fb.group({
-      PatientID: ['', Validators.required],
-      DoctorID: ['', Validators.required],
+      PatientName: ['', Validators.required],
+      DoctorName: ['', Validators.required],
       Date: ['', Validators.required],
       Reason: ['', Validators.required],
       Notes: ['']
     });
+    
+
     this.loadPatients();
     this.loadDoctors();
   }
 
   loadPatients(): void {
-    this.patientService.GetAll().subscribe((data) => {
-      this.patients = data;
-    });
+    this.patientService.GetAll().subscribe(
+      (data) => (this.patients = data),
+      (error) => {
+        console.error('Failed to load patients', error);
+        this.patients = [];
+      }
+    );
   }
 
   loadDoctors(): void {
-    this.doctorService.GetAll().subscribe((data) => {
-      this.doctors = data;
-    });
+    this.doctorService.GetAll().subscribe(
+      (data) => (this.doctors = data),
+      (error) => {
+        console.error('Failed to load doctors', error);
+        this.doctors = [];
+      }
+    );
   }
 
   onSubmit(): void {
     if (this.addConsultationForm.valid) {
-      this.consultationService.addConsultation(this.addConsultationForm.value).subscribe(() => {
-        this.dialogRef.close(true);
-      });
+      const consultation = {
+        ...this.addConsultationForm.value,
+        // If needed, you can map additional properties here
+      };
+  
+      this.consultationService.addConsultation(consultation).subscribe(
+        () => {
+          this.dialogRef.close(true);
+        },
+        (error) => {
+          console.error('Error adding consultation:', error);
+          alert('Failed to add consultation. Please try again.');
+        }
+      );
     } else {
       alert('Please fill out all required fields.');
     }
   }
+  
 
   closeDialog(): void {
     this.dialogRef.close();

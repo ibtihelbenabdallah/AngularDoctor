@@ -15,9 +15,11 @@ export class ConsultationService {
     private patientService: PatientService,
     private doctorService: DoctorService
   ) {}
+
   addConsultation(consultation: Consultation): Observable<Consultation> {
     return this.http.post<Consultation>('http://localhost:3000/Consultation', consultation);
   }
+
 
 
   deleteConsultation(id: string): Observable<void> {
@@ -36,10 +38,10 @@ export class ConsultationService {
 
         // Fetch patient and doctor information
         const patientRequests = consultations.map((c) =>
-          c.PatientID ? this.patientService.getPatientById(c.PatientID).pipe(catchError(() => of(null))) : of(null)
+          c.PatientName ? this.patientService.getPatientById(c.PatientName).pipe(catchError(() => of(null))) : of(null)
         );
         const doctorRequests = consultations.map((c) =>
-          c.DoctorID ? this.doctorService.getDoctorById(c.DoctorID).pipe(catchError(() => of(null))) : of(null)
+          c.DoctorName ? this.doctorService.getDoctorById(c.DoctorName).pipe(catchError(() => of(null))) : of(null)
         );
 
         return forkJoin([forkJoin(patientRequests), forkJoin(doctorRequests)]).pipe(
@@ -63,11 +65,36 @@ export class ConsultationService {
     );
   }
   getConsultationById(id: string): Observable<any> {
-    return this.http.get<any>(`http://localhost:3000/Consultation/${id}`);
+    return this.http.get<Consultation>(`http://localhost:3000/Consultation/${id}`).pipe(
+      switchMap((consultation) => {
+        if (!consultation) return of(null);
+  
+        const patientRequest = consultation.PatientName
+          ? this.patientService.getPatientById(consultation.PatientName).pipe(catchError(() => of(null)))
+          : of(null);
+  
+        const doctorRequest = consultation.DoctorName
+          ? this.doctorService.getDoctorById(consultation.DoctorName).pipe(catchError(() => of(null)))
+          : of(null);
+  
+        return forkJoin([patientRequest, doctorRequest]).pipe(
+          map(([patient, doctor]) => ({
+            ...consultation,
+            patientName: patient ? patient.Name : 'Unknown',
+            doctorName: doctor ? doctor.Name : 'Unknown',
+          }))
+        );
+      }),
+      catchError((error) => {
+        console.error('Error fetching consultation details:', error);
+        return of(null);
+      })
+    );
   }
   
-  updateConsultation(id: string, C: Consultation): Observable<any> {
-    return this.http.put<any>(`http://localhost:3000/Consultation/${id}`, C);
+  updateConsultation(id: string, consultation: Consultation): Observable<Consultation> {
+    return this.http.put<Consultation>(`http://localhost:3000/Consultation/${id}`, consultation);
   }
+  
 
 }
