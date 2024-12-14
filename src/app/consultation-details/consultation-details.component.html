@@ -1,0 +1,41 @@
+<div *ngIf="consultation" class="consultation-card">
+    <h1>Consultation Details</h1>
+    <div class="consultation-info">
+      <div class="info-item">
+        <i class="fas fa-id-card"></i>
+        <p><strong>ID:</strong> {{ consultation.id }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-user"></i>
+        <p><strong>Patient Name:</strong> {{ consultation.PatientName }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-user-md"></i>
+        <p><strong>Doctor:</strong> {{ consultation.DoctorName }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-calendar-alt"></i>
+        <p><strong>Date:</strong> {{ consultation.Date }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-clock"></i>
+        <p><strong>Time of Consultation:</strong> {{ consultation.ConsultationTime }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-notes-medical"></i>
+        <p><strong>Reason:</strong> {{ consultation.Reason }}</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-comments"></i>
+        <p><strong>Notes:</strong> {{ consultation.Notes }}</p>
+      </div>
+    </div>
+  
+    <!-- Bouton Modifier -->
+    <button class="btn-edit" (click)="openEditPopup()">Edit</button>
+  </div>
+  
+  <!-- Si aucune information n'est trouvée -->
+  <div *ngIf="!consultation" class="no-consultation">
+    <p>No consultation found.</p>
+  </div>

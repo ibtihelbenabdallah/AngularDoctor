@@ -23,7 +23,27 @@ import { MatSelectModule } from '@angular/material/select';
 import { PatientComponent } from './patient/patient.component';
 import { AddPatientDialogComponent } from './add-patient-dialog/add-patient-dialog.component';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
+import { ConsultationComponent } from './consultation/consultation.component';
+import { AddConsultationDialogComponent } from './add-consultation-dialog/add-consultation-dialog.component';
 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core'; // Ajoutez cette ligne
+
+import { ConsultationService } from './services/consultation.service';
+import { DoctorService } from './services/doctor.service';
+import { PatientService } from './services/patient.service';
+import { LoginComponent } from './login/login.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { AcceuilComponent } from './acceuil/acceuil.component';
+import { DepartementComponent } from './departement/departement.component';
+import { AddDepartementDialogComponent } from './add-departement-dialog/add-departement-dialog.component';
+import { DepartementDetailsComponent } from './departement-details/departement-details.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ConsultationDetailsComponent } from './consultation-details/consultation-details.component';
+
+// Importation du module Charts
 
 
 
@@ -36,7 +56,20 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
     AddDoctorDialogComponent,
     PatientComponent,
     AddPatientDialogComponent,
-    PatientDetailsComponent
+    PatientDetailsComponent,
+    ConsultationComponent,
+    AddConsultationDialogComponent,
+    LoginComponent,
+    MainLayoutComponent,
+    AuthLayoutComponent,
+    AcceuilComponent,
+    DepartementComponent,
+    AddDepartementDialogComponent,
+    DepartementDetailsComponent,
+    NotFoundComponent,
+    DashboardComponent,
+    ConsultationDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -54,9 +87,12 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
   ReactiveFormsModule,
   MatCardModule,
   MatRadioModule,
-  MatSelectModule
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  
   ],
-  providers: [],
+  providers: [ConsultationService, DoctorService, PatientService,LoginComponent,MatNativeDateModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,46 @@
+<div *ngIf="departement" class="doctor-card">
+    <h1>Department details</h1>
+    <div class="doctor-info">
+       <!--<p><strong>ID:</strong> {{ patient.idPatient }}</p> -->
+      <p><strong>Description :</strong> {{ departement.description }}</p>
+      <p><strong>Specialization :</strong> {{departement.specialisation }}</p>
+      
+      
+    </div>
+    
+    <!-- Bouton Modifier -->
+    <button class="btn-edit" (click)="openEditPopup()">Edit</button>
+  </div>
+  
+  <!-- Si aucune information n'est trouvée -->
+  <div *ngIf="!departement" class="no-doctor">
+    <p>The department was not found.</p>
+  </div>
+  
+  <!-- Pop-up -->
+  <div *ngIf="isPopupOpen" class="popup-overlay">
+    <div class="popup-content">
+      <h2>Modifier le departement</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">description :</label>
+          <input id="name" formControlName="description" type="text">
+        </div>
+
+        <div class="form-group">
+            <label for="name">specialisation :</label>
+            <input id="name" formControlName="specialisation" type="text">
+          </div>
+  
+          
+          
+  
+       
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">Sauvegarder</button>
+          <button type="button" class="btn-cancel" (click)="closePopup()">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

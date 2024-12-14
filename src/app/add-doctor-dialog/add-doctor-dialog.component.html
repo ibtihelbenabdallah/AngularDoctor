@@ -54,6 +54,15 @@
       </mat-select>
       <mat-error *ngIf="addDoctorForm.get('Experience')?.hasError('required')">Experience is required</mat-error>
     </mat-form-field>
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Department</mat-label>
+      <mat-select formControlName="departementId">
+        <mat-option *ngFor="let department of departments" [value]="department.id">
+          {{ department.description }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="addDoctorForm.get('departementId')?.hasError('required')">Department is required</mat-error>
+    </mat-form-field>
 
     <mat-form-field appearance="outline" floatLabel="always">
       <mat-label>Duty Timing</mat-label>

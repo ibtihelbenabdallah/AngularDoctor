@@ -1,0 +1,36 @@
+<div class="dashboard-container">
+    <h1>Dashboard</h1>
+  
+    <!-- Indicateur de chargement -->
+    <div *ngIf="isLoading" class="loading-spinner">
+      <p>Loading...</p>
+    </div>
+  
+    <!-- Section des statistiques globales -->
+    <div class="stats" *ngIf="!isLoading">
+      <div class="stat">
+        <h3>Doctors</h3>
+        <p>{{ doctorsCount }}</p>
+      </div>
+      <div class="stat">
+        <h3>Patients</h3>
+        <p>{{ patientsCount }}</p>
+      </div>
+      <div class="stat">
+        <h3>Consultations</h3>
+        <p>{{ consultationsCount }}</p>
+      </div>
+      <div class="stat">
+        <h3>Departments</h3>
+        <p>{{ departmentsCount }}</p>
+      </div>
+    </div>
+  
+    <!-- Section du graphique des médecins par département -->
+    <div class="department-stats" *ngIf="!isLoading">
+        <h2>Doctors by Department</h2>
+        <canvas #barChart></canvas> <!-- canvas element for the chart -->
+      </div>
+      
+  </div>
+  

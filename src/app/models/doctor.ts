@@ -1,5 +1,8 @@
+import { Departement } from "./departement";
+
 export interface Doctor {
     id?: string;
+    //idDoctor?: string;
     Name: string;
     Gender: string;
     Text: string;
@@ -16,6 +19,8 @@ export interface Doctor {
     StartHour: string;
     EndHour: string;
     AvailableDays: number[];
-    //WorkDays: WorkDay[];
+    departementId: string; 
+    Department?: Departement;
+
   
 }
