@@ -3,13 +3,13 @@
   <form [formGroup]="addDoctorForm" class="new-doctor-form">
   
     <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>Doctor Name</mat-label>
+      <mat-label><i class="fas fa-user"></i> Doctor Name</mat-label>
       <input matInput formControlName="Name" />
       <mat-error *ngIf="addDoctorForm.get('Name')?.hasError('required')">Name is required</mat-error>
     </mat-form-field>
 
     <div class="gender-container">
-      <label class="gender-label">Gender</label>
+      <label class="gender-label"><i class="fas fa-venus-mars"></i> Gender</label>
       <mat-radio-group formControlName="Gender" class="gender-group">
         <mat-radio-button value="Male">Male</mat-radio-button>
         <mat-radio-button value="Female">Female</mat-radio-button>
@@ -18,19 +18,19 @@
     </div>
 
     <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>Mobile Number</mat-label>
+      <mat-label><i class="fas fa-phone"></i> Mobile Number</mat-label>
       <input matInput formControlName="Mobile" placeholder="Enter 8-digit number" />
       <mat-error *ngIf="addDoctorForm.get('Mobile')?.hasError('pattern')">Invalid mobile number</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>Email</mat-label>
+      <mat-label><i class="fas fa-envelope"></i> Email</mat-label>
       <input matInput formControlName="Email" />
       <mat-error *ngIf="addDoctorForm.get('Email')?.hasError('email')">Invalid email address</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>Specialization</mat-label>
+      <mat-label><i class="fas fa-stethoscope"></i> Specialization</mat-label>
       <mat-select formControlName="Specialization">
         <mat-option *ngFor="let specialization of specializationData" [value]="specialization">
           {{ specialization }}
@@ -40,13 +40,13 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>Education</mat-label>
+      <mat-label><i class="fas fa-graduation-cap"></i> Education</mat-label>
       <input matInput formControlName="Education" />
       <mat-error *ngIf="addDoctorForm.get('Education')?.hasError('required')">Education is required</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>Experience</mat-label>
+      <mat-label><i class="fas fa-briefcase"></i> Experience</mat-label>
       <mat-select formControlName="Experience">
         <mat-option *ngFor="let experience of experienceData" [value]="experience">
           {{ experience }}
@@ -65,7 +65,7 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>Duty Timing</mat-label>
+      <mat-label><i class="fas fa-clock"></i> Duty Timing</mat-label>
       <mat-select formControlName="DutyTiming">
         <mat-option *ngFor="let timing of dutyTimingsData" [value]="timing">
           {{ timing }}

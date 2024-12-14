@@ -72,7 +72,7 @@ import { ConsultationDetailsComponent } from './consultation-details/consultatio
     
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
   MatDialogModule,
   AppRoutingModule,
   HttpClientModule,

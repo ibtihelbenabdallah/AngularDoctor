@@ -32,5 +32,6 @@ export class DoctorService {
     {
       return this.httpClient.get<Doctor>(`http://localhost:3000/Doctor/${id}`);
     }
+   
 
   }

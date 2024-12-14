@@ -1,10 +1,12 @@
 <div class="doctor-interface-container">
+  <!-- Actions Header -->
   <div class="header-actions">
     <button mat-raised-button color="primary" (click)="openAddDoctorDialog()">Add doctor</button>
   </div>
 
+  <!-- Table Container -->
   <div class="doctor-table-container mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" class="mat-table">
+    <table mat-table [dataSource]="dataSource" class="mat-table responsive-table">
 
       <!-- ID Column -->
       <ng-container matColumnDef="Id">
@@ -46,12 +48,12 @@
       <ng-container matColumnDef="Action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let doctor">
-          <button mat-icon-button [routerLink]="['/doctorDetails', doctor.id]">
+          <button mat-icon-button [routerLink]="['/doctorDetails', doctor.id]" matTooltip="Voir les détails">
             <mat-icon>launch</mat-icon>
           </button>
           <button mat-icon-button color="warn" (click)="delete(doctor.id)">
             <mat-icon>delete</mat-icon>
-          </button> 
+          </button>
         </td>
       </ng-container>
 
