@@ -42,8 +42,9 @@ import { DepartementDetailsComponent } from './departement-details/departement-d
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConsultationDetailsComponent } from './consultation-details/consultation-details.component';
+import { NgChartsModule } from 'ng2-charts';
 
-// Importation du module Charts
+import {  } from 'ng2-charts';
 
 
 
@@ -90,6 +91,9 @@ import { ConsultationDetailsComponent } from './consultation-details/consultatio
   MatSelectModule,
   MatDatepickerModule,
   MatNativeDateModule,
+  NgChartsModule,
+  
+    
   
   ],
   providers: [ConsultationService, DoctorService, PatientService,LoginComponent,MatNativeDateModule],

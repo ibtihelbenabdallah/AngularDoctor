@@ -2,7 +2,7 @@ import { Departement } from "./departement";
 
 export interface Doctor {
     id?: string;
-    //idDoctor?: string;
+    idDoctor?: string;
     Name: string;
     Gender: string;
     Text: string;

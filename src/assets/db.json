@@ -17,18 +17,6 @@
       "departementId": "4"
     },
     {
-      "id": "ab55",
-      "Name": "malak derbel",
-      "Gender": "Female",
-      "Mobile": "54637833",
-      "Email": "eeee@gmail.com",
-      "Specialization": "Cardiology",
-      "Education": "isims",
-      "Experience": "3+ years",
-      "DutyTiming": "08:00 AM - 05:00 PM",
-      "departementId": "2"
-    },
-    {
       "id": "84ff",
       "Name": "IBTIHE ",
       "Gender": "Female",
@@ -55,23 +43,22 @@
       "Email": "ibtihelbenabdallah94@gmail.com",
       "Mobile": "20138374",
       "departementId": "1"
+    },
+    {
+      "id": "5088",
+      "Name": "h",
+      "Gender": "Female",
+      "Mobile": "12121212",
+      "Email": "derbelmalak@gmail.com",
+      "Specialization": "Cardiology",
+      "Education": "ferf",
+      "Experience": "1+ years",
+      "DutyTiming": "08:00 AM - 05:00 PM",
+      "departementId": "2",
+      "idDoctor": "idhv9z2jlng"
     }
   ],
   "Patient": [
-    {
-      "id": "2",
-      "Name": "Milka",
-      "Text": "Milka",
-      "DOB": "2000-04-05T00:00:d00.000Z",
-      "Mobile": "(717) 555-4445",
-      "Email": "milka40@sample.com",
-      "Address": "908 W. Capital Way",
-      "Disease": "Bone Fracture",
-      "DepartmentName": "ORTHOPEDICS",
-      "BloodGroup": "AB+",
-      "Gender": "Female",
-      "Symptoms": "Swelling or bruising over a bone, Pain in the injured area"
-    },
     {
       "id": "3",
       "Name": "Adams",
@@ -129,51 +116,46 @@
       "Symptoms": "Swelling, warmth, or redness in the joint"
     },
     {
-      "id": "7",
-      "Name": "Maud Oliver",
-      "Text": "MaudOliver",
-      "DOB": "1989-11-29T00:00:00.000Z",
-      "Mobile": "(206) 666-4444",
-      "Email": "moud46@rpy.com",
-      "Address": "Coventry House\nMiner Rd.",
-      "Disease": "Racing heartbeat",
-      "DepartmentName": "CARDIOLOGY",
+      "id": "d1d6",
+      "Name": "hela ",
+      "Email": "hela@gmail.com",
+      "Mobile": "12234556",
+      "Disease": "fever",
+      "Gender": "Male",
       "BloodGroup": "B+",
-      "Gender": "Male",
-      "Symptoms": "A fluttering in your chest"
-    },
-    {
-      "id": "5541",
-      "Name": "GTT",
-      "Email": "GTGT@gmail.com",
-      "Mobile": "54324783",
-      "Disease": "EFE",
-      "Gender": "Female",
-      "BloodGroup": "rffr",
-      "DutyTiming": "rfrf",
-      "DOB": "13/15/2013",
-      "Address": "rf",
-      "Symptoms": "frfr"
-    },
-    {
-      "id": "aadb",
-      "Name": "ccgyug",
-      "Email": "ccc@gmai.com",
-      "Mobile": "98765432",
-      "Disease": "sz",
-      "Gender": "Male",
-      "BloodGroup": "2345678"
+      "DutyTiming": "ff",
+      "DOB": "gg",
+      "Address": "gg",
+      "Symptoms": "gg"
     }
   ],
   "Consultation": [
     {
-      "id": "d6c1",
+      "PatientName": "Richa",
+      "DoctorName": "malak derbel",
+      "Date": "2024-12-13",
+      "ConsultationTime": "12:12",
+      "Notes": "hi",
+      "Reason": "kkmom",
+      "id": "b5f6"
+    },
+    {
+      "id": "18c0",
       "PatientName": "Milka",
-      "DoctorName": "malak",
+      "DoctorName": "abdou",
       "Date": "1212-12-12",
       "ConsultationTime": "12:12",
-      "Reason": "kkmom",
-      "Notes": "jomom"
+      "Reason": "mm",
+      "Notes": "mm"
+    },
+    {
+      "id": "51d4",
+      "PatientName": "Milka",
+      "DoctorName": "ssszz",
+      "Date": "1222-12-12",
+      "ConsultationTime": "11:11",
+      "Reason": "n",
+      "Notes": "ht"
     }
   ],
   "admin": [

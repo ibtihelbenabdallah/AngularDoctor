@@ -42,6 +42,7 @@ export class ConsultationService {
         );
         const doctorRequests = consultations.map((c) =>
           c.DoctorName ? this.doctorService.getDoctorById(c.DoctorName).pipe(catchError(() => of(null))) : of(null)
+        
         );
 
         return forkJoin([forkJoin(patientRequests), forkJoin(doctorRequests)]).pipe(

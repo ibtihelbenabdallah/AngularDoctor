@@ -78,8 +78,7 @@ export class ConsultationDetailsComponent implements OnInit {
   }
 
   openEditPopup(): void {
-    this.isPopupOpen = true;
-  }
+    this.isPopupOpen = true;  }
 
   closePopup(): void {
     this.isPopupOpen = false;

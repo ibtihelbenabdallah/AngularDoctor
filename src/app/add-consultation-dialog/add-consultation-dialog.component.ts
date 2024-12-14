@@ -49,8 +49,10 @@ export class AddConsultationDialogComponent {
   }
 
   loadDoctors(): void {
-    this.doctorService.GetAll().subscribe(
+    this.doctorService.GetAllDoctors().subscribe(
+
       (data) => (this.doctors = data),
+
       (error) => {
         console.error('Failed to load doctors', error);
         this.doctors = [];

@@ -13,13 +13,18 @@
       </mat-error>
     </mat-form-field>
     
+
     <mat-form-field appearance="outline" floatLabel="always">
       <mat-label><i class="fas fa-user-md"></i> Select Doctor</mat-label>
       <mat-select formControlName="DoctorName" required>
         <mat-option *ngFor="let doctor of doctors" [value]="doctor.Name">
           {{ doctor.Name }}
         </mat-option>
+        <mat-option *ngIf="doctors.length === 0" disabled>
+          No doctors available
+        </mat-option>
       </mat-select>
+      
       <mat-error *ngIf="addConsultationForm.get('DoctorName')?.hasError('required')">
         Doctor is required
       </mat-error>

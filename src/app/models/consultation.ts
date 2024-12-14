@@ -1,4 +1,5 @@
 export interface Consultation {
+  Doctor: any;
   id?: string; // Optional for new consultations
   PatientName: string;
   DoctorName: string;
