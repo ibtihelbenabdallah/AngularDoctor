@@ -8,7 +8,7 @@ import { AddConsultationDialogComponent } from '../add-consultation-dialog/add-c
   templateUrl: './consultation.component.html',
   styleUrls: ['./consultation.component.css']
 })
-export class ConsultationsComponent implements OnInit {
+export class ConsultationComponent implements OnInit {
   consultations: any[] = [];
   displayedColumns: string[] = ['id', 'patientName', 'doctorName', 'date',  'actions'];
 

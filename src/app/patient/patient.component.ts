@@ -33,7 +33,9 @@ export class PatientComponent  implements OnInit {
   // Ouvrir le dialog pour ajouter un médecin
   openAddPatientDialog(): void {
     const dialogRef = this.dialog.open(AddPatientDialogComponent, {
-      width: '400px'
+      width: '600px', // Set the width
+      height: '700px',
+
     });
 
    
@@ -57,16 +59,38 @@ export class PatientComponent  implements OnInit {
   });
   }
 
-  
 
   delete(id: string): void {
-    if (confirm('Êtes-vous sûr de vouloir supprimer ce patient ?')) {
-      this.Ms.deletePatient(id).subscribe(() => {
-        // Supprimer localement le médecin de la liste
-        this.dataSource = this.dataSource.filter(patient => patient.id !== id);
+    if (confirm('Êtes-vous sûr de vouloir supprimer ce médecin ?')) {
+      // Call the delete method from the service
+      this.Ms.deletePatient(id).subscribe({
+        next: () => {
+          console.log('Patient deleted successfully!');
+          
+          // Optionally, fetch the list again from the server
+          this.Ms.GetAll().subscribe((patients) => {
+            this.dataSource = patients;  // Update the local list with the fresh data from the server
+          });
+        },
+        error: (err) => {
+          console.error('Error deleting patient:', err);
+          alert('Erreur lors de la suppression du patient.');
+        }
       });
     }
- }
+  }
+
+
+  
+
+  //delete(idPatient: string): void {
+   // if (confirm('Êtes-vous sûr de vouloir supprimer ce patient ?')) {
+     // this.Ms.deletePatient(idPatient).subscribe(() => {
+        // Supprimer localement le médecin de la liste
+       // this.dataSource = this.dataSource.filter(patient => patient.idPatient !== idPatient);
+     // });
+   // }
+// }
 
 
 

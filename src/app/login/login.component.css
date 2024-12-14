@@ -1,0 +1,104 @@
+/* src/app/components/login/login.component.css */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e3e3ff; /* Fond bleu pâle pour une ambiance professionnelle */
+}
+
+.login-box {
+  background-color: #babaff;
+
+  border-radius: 30px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Ombre douce et plus marquée */
+  width: 500px;
+  max-width: 420px;
+  padding: 40px;
+  box-sizing: border-box;
+  transition: transform 0.4s ease-in-out; /* Animation de transformation lors du focus */
+}
+
+.login-box:hover {
+  transform: translateY(-10px); /* Légère élévation du formulaire au survol */
+}
+
+.card-header {
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 10px;
+}
+
+.card-header h2 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.card-header p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #9e9eff;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: #9e9eff;
+  box-shadow: 0 0 8px rgba(0, 105, 217, 0.5); /* Focus accentué avec une couleur bleu vif */
+}
+
+.text-danger {
+  font-size: 0.875rem;
+  color: #e74c3c;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #7575ff;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #7575ff; /* Teinte plus foncée pour l'effet hover */
+}
+
+.btn:disabled {
+  background-color: 
+  #9e9eff; /* Couleur de bouton désactivé */
+}
+
+small {
+  font-size: 0.875rem;
+  color: #e74c3c;
+}
+

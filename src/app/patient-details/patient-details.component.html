@@ -1,8 +1,8 @@
 <div *ngIf="patient" class="doctor-card">
-    <h1>Détails du patient</h1>
+    <h1>Patient details</h1>
     <div class="doctor-info">
-      <p><strong>ID:</strong> {{ patient.id }}</p>
-      <p><strong>Nom:</strong> {{ patient.Name }}</p>
+       <!--<p><strong>ID:</strong> {{ patient.idPatient }}</p> -->
+      <p><strong>Name:</strong> {{ patient.Name }}</p>
       <p><strong>Email:</strong> {{ patient.Email }}</p>
       <p><strong>Mobile:</strong> {{ patient.Mobile }}</p>
       <p><strong>Disease:</strong> {{ patient.Disease }}</p>
@@ -12,12 +12,13 @@
     </div>
     
     <!-- Bouton Modifier -->
-    <button class="btn-edit" (click)="openEditPopup()">Modifier</button>
+    <button class="btn-edit" (click)="openEditPopup()">Edit</button>
+
   </div>
   
   <!-- Si aucune information n'est trouvée -->
   <div *ngIf="!patient" class="no-doctor">
-    <p>Le patient n'a pas été trouvé.</p>
+    <p>The patient was not found.</p>
   </div>
   
   <!-- Pop-up -->

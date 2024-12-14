@@ -1,26 +1,60 @@
 {
   "Doctor": [
     {
+      "id": "e74f",
+      "Name": "malak",
+      "Specialization": "General Medicine",
+      "Email": "cf@gmail.com",
+      "Mobile": "52874125",
+      "departementId": "3"
+    },
+    {
+      "id": "212a",
+      "Name": "ssszz",
+      "Specialization": "Cardiology",
+      "Email": "eeee@gmail.com",
+      "Mobile": "98767687",
+      "departementId": "4"
+    },
+    {
       "id": "ab55",
       "Name": "malak derbel",
       "Gender": "Female",
-      "Mobile": "29268392",
-      "Email": "derbelmalak@gmail.com",
-      "Specialization": "Neurology",
-      "Education": "isims",
-      "Experience": "5+ years",
-      "DutyTiming": "10:00 AM - 07:00 PM"
-    },
-    {
-      "id": "90d6",
-      "Name": "ibtuhel",
-      "Gender": "Female",
-      "Mobile": "85784589",
-      "Email": "ibthel@gmail.com",
+      "Mobile": "54637833",
+      "Email": "eeee@gmail.com",
       "Specialization": "Cardiology",
       "Education": "isims",
-      "Experience": "1+ years",
-      "DutyTiming": "08:00 AM - 05:00 PM"
+      "Experience": "3+ years",
+      "DutyTiming": "08:00 AM - 05:00 PM",
+      "departementId": "2"
+    },
+    {
+      "id": "84ff",
+      "Name": "IBTIHE ",
+      "Gender": "Female",
+      "Mobile": "20138374",
+      "Email": "eeee@gmail.com",
+      "Specialization": "Cardiology",
+      "Education": "ISISMS",
+      "Experience": "3+ years",
+      "DutyTiming": "10:00 AM - 07:00 PM",
+      "departementId": "3"
+    },
+    {
+      "id": "e38e",
+      "Name": "mmWW",
+      "Specialization": "Cardiology",
+      "Email": "ibtihelbenabdallah94@gmail.com",
+      "Mobile": "32435464",
+      "departementId": "4"
+    },
+    {
+      "id": "d35a",
+      "Name": "malak derbel",
+      "Specialization": "Cardiology",
+      "Email": "ibtihelbenabdallah94@gmail.com",
+      "Mobile": "20138374",
+      "departementId": "1"
     }
   ],
   "Patient": [
@@ -28,7 +62,7 @@
       "id": "2",
       "Name": "Milka",
       "Text": "Milka",
-      "DOB": "2000-04-05T00:00:00.000Z",
+      "DOB": "2000-04-05T00:00:d00.000Z",
       "Mobile": "(717) 555-4445",
       "Email": "milka40@sample.com",
       "Address": "908 W. Capital Way",
@@ -65,6 +99,70 @@
       "BloodGroup": "B+",
       "Gender": "Male",
       "Symptoms": "Physical aches or pain, Memory difficulties or personality change"
+    },
+    {
+      "id": "5",
+      "Name": "Mercy",
+      "Text": "Mercy",
+      "DOB": "2005-05-29T00:00:00.000Z",
+      "Mobile": "(717) 555-5444",
+      "Email": "mercy60@sample.com",
+      "Address": "14 Garrett Hill",
+      "Disease": "Skin Hives",
+      "DepartmentName": "DERMATOLOGY",
+      "BloodGroup": "AB-",
+      "Gender": "Female",
+      "Symptoms": "Outbreak of swollen, pale red bumps or plaques"
+    },
+    {
+      "id": "6",
+      "Name": "Richa",
+      "Text": "Richa",
+      "DOB": "1989-11-29T00:00:00.000Z",
+      "Mobile": "(206) 555-4444",
+      "Email": "richa46@mail.com",
+      "Address": "Coventry House\nMiner Rd.",
+      "Disease": "Arm Fracture",
+      "DepartmentName": "ORTHOPEDICS",
+      "BloodGroup": "B+",
+      "Gender": "Female",
+      "Symptoms": "Swelling, warmth, or redness in the joint"
+    },
+    {
+      "id": "7",
+      "Name": "Maud Oliver",
+      "Text": "MaudOliver",
+      "DOB": "1989-11-29T00:00:00.000Z",
+      "Mobile": "(206) 666-4444",
+      "Email": "moud46@rpy.com",
+      "Address": "Coventry House\nMiner Rd.",
+      "Disease": "Racing heartbeat",
+      "DepartmentName": "CARDIOLOGY",
+      "BloodGroup": "B+",
+      "Gender": "Male",
+      "Symptoms": "A fluttering in your chest"
+    },
+    {
+      "id": "5541",
+      "Name": "GTT",
+      "Email": "GTGT@gmail.com",
+      "Mobile": "54324783",
+      "Disease": "EFE",
+      "Gender": "Female",
+      "BloodGroup": "rffr",
+      "DutyTiming": "rfrf",
+      "DOB": "13/15/2013",
+      "Address": "rf",
+      "Symptoms": "frfr"
+    },
+    {
+      "id": "aadb",
+      "Name": "ccgyug",
+      "Email": "ccc@gmai.com",
+      "Mobile": "98765432",
+      "Disease": "sz",
+      "Gender": "Male",
+      "BloodGroup": "2345678"
     }
   ],
   "Consultation": [
@@ -76,15 +174,45 @@
       "ConsultationTime": "12:12",
       "Reason": "kkmom",
       "Notes": "jomom"
+    }
+  ],
+  "admin": [
+    {
+      "id": "1",
+      "email": "admin@gmail.com",
+      "password": "1234"
     },
     {
-      "id": "c2fb",
-      "PatientName": "Milka",
-      "DoctorName": "ibtuhel",
-      "Date": "1212-12-12",
-      "ConsultationTime": "12:12",
-      "Reason": "fever ",
-      "Notes": "no"
+      "id": "2",
+      "email": "ibtihel@gmail.com",
+      "password": "ibtihel123"
+    },
+    {
+      "id": "3",
+      "email": "malak@gmail.com",
+      "password": "malak123"
+    }
+  ],
+  "Departement": [
+    {
+      "id": "1",
+      "description": "Département 1",
+      "specialisation": "Cardiologies"
+    },
+    {
+      "id": "3",
+      "description": "Département 3",
+      "specialisation": "Chirurgie Orthopédique"
+    },
+    {
+      "id": "4",
+      "description": "Département 4",
+      "specialisation": "Pédiatrie"
+    },
+    {
+      "id": "2",
+      "description": "Département 2",
+      "specialisation": "Oncologie"
     }
   ]
 }

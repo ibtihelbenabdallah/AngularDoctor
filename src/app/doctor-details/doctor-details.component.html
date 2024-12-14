@@ -1,120 +1,62 @@
 <div *ngIf="doctor" class="doctor-card">
-    <h1>Doctor Details</h1>
-    <div class="doctor-info">
-      <div class="info-item">
-        <i class="fas fa-id-badge"></i>
-        <p><strong>ID:</strong> {{ doctor.id }}</p>
-      </div>
-      <div class="info-item">
-        <i class="fas fa-user"></i>
-        <p><strong>Nom:</strong> {{ doctor.Name }}</p>
-      </div>
-      <div class="info-item">
-        <i class="fas fa-stethoscope"></i>
-        <p><strong>Spécialisation:</strong> {{ doctor.Specialization }}</p>
-      </div>
-      <div class="info-item">
-        <i class="fas fa-envelope"></i>
-        <p><strong>Email:</strong> {{ doctor.Email }}</p>
-      </div>
-      <div class="info-item">
-        <i class="fas fa-phone"></i>
-        <p><strong>Mobile:</strong> {{ doctor.Mobile }}</p>
-      </div>
-      <div class="info-item">
-        <i class="fas fa-venus-mars"></i>
-        <p><strong>Gender:</strong> {{ doctor.Gender }}</p>
-      </div>
-      <div class="info-item">
-        <i class="fas fa-graduation-cap"></i>
-        <p><strong>Education:</strong> {{ doctor.Education }}</p>
-      </div>
-      <div class="info-item">
-        <i class="fas fa-briefcase"></i>
-        <p><strong>Experience:</strong> {{ doctor.Experience }}</p>
-      </div>
-      <div class="info-item">
-        <i class="fas fa-clock"></i>
-        <p><strong>Duty Timing:</strong> {{ doctor.DutyTiming }}</p>
-      </div>
-    </div>
-  
-    <!-- Bouton Modifier -->
-    <button class="btn-edit" (click)="openEditPopup()">Modifier</button>
+  <h1>Doctor details</h1>
+  <div class="doctor-info">
+    <p><strong>ID:</strong> {{ doctor.id }}</p>
+    <p><strong>Name:</strong> {{ doctor.Name }}</p>
+    <p><strong>Specialization:</strong> {{ doctor.Specialization }}</p>
+    <p><strong>Email:</strong> {{ doctor.Email }}</p>
+    <p><strong>Mobile:</strong> {{ doctor.Mobile }}</p>
+    <p><strong>Departement:</strong> {{ doctor.Department?.description }}</p> <!-- Afficher le département actuel -->
+
   </div>
   
-  <!-- Si aucune information n'est trouvée -->
-  <div *ngIf="!doctor" class="no-doctor">
-    <p>Le médecin n'a pas été trouvé.</p>
-  </div>
+  <!-- Bouton Modifier -->
+  <button class="btn-edit" (click)="openEditPopup()">Edit</button>
+</div>
 
+<!-- Si aucune information n'est trouvée -->
+<div *ngIf="!doctor" class="no-doctor">
+  <p>The doctor was not found.</p>
+</div>
 
-
-  <!-- pop up -->
-  <div *ngIf="isPopupOpen" class="popup-overlay">
-    <div class="popup-content">
-      <div class="popup-header">
-        <h2><i class="fas fa-edit"></i> Update Doctor</h2>
-        <div fxLayout="row" fxLayoutAlign="end center" >
-        <button fxLayout="row" fxLayoutAlign="end center" class="btn-close" (click)="closePopup()">✖</button>
-    
+<!-- Pop-up -->
+<div *ngIf="isPopupOpen" class="popup-overlay">
+  <div class="popup-content">
+    <h2>Modifier le médecin</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nom :</label>
+        <input id="name" formControlName="Name" type="text">
       </div>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="popup-form">
-        <!-- Gender and Name in a row -->
-        <div class="form-row">
-            <div class="form-group">
-                <label for="name"><i class="fas fa-user"></i> Nom :</label>
-                <input id="name" formControlName="Name" type="text" placeholder="Entrez le nom...">
-              </div>
-          <div class="form-group">
-            <label for="gender"><i class="fas fa-venus-mars"></i> Gender :</label>
-            <input id="gender" formControlName="Gender" type="text" placeholder="Entrez le genre...">
-          </div>
-       
-        </div>
-  
-        <!-- Specialty (longer input) -->
-        <div class="form-group form-group-long">
-          <label for="specialization"><i class="fas fa-stethoscope"></i> Spécialisation :</label>
-          <input id="specialization" formControlName="Specialization" type="text" placeholder="Entrez la spécialisation...">
-        </div>
-  
-        <!-- Mobile and Email in a row -->
-        <div class="form-row">
-          <div class="form-group">
-            <label for="mobile"><i class="fas fa-phone"></i> Mobile :</label>
-            <input id="mobile" formControlName="Mobile" type="text" placeholder="Entrez le numéro de mobile...">
-          </div>
-          <div class="form-group">
-            <label for="email"><i class="fas fa-envelope"></i> Email :</label>
-            <input id="email" formControlName="Email" type="email" placeholder="Entrez l'email...">
-          </div>
-        </div>
-  
-        <!-- Education and Experience in a row -->
-        <div class="form-row">
-          <div class="form-group">
-            <label for="education"><i class="fas fa-graduation-cap"></i> Education :</label>
-            <input id="education" formControlName="Education" type="text" placeholder="Entrez l'éducation...">
-          </div>
-          <div class="form-group">
-            <label for="experience"><i class="fas fa-briefcase"></i> Experience :</label>
-            <input id="experience" formControlName="Experience" type="text" placeholder="Entrez l'expérience...">
-          </div>
-        </div>
-  
-        <!-- Duty Timing (longer input) -->
-        <div class="form-group form-group-long">
-          <label for="dutyTiming"><i class="fas fa-clock"></i> Duty Timing :</label>
-          <input id="dutyTiming" formControlName="DutyTiming" type="text" placeholder="Entrez les horaires...">
-        </div>
-  
-        <!-- Submit and Cancel Buttons -->
-        <div class="form-actions">
-          <button type="submit" class="btn-submit">Sauvegarder</button>
-          <button type="button" class="btn-cancel" (click)="closePopup()">Annuler</button>
-        </div>
-      </form>
-    </div>
+
+      <div class="form-group">
+        <label for="specialization">Spécialisation :</label>
+        <input id="specialization" formControlName="Specialization" type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email :</label>
+        <input id="email" formControlName="Email" type="email">
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile :</label>
+        <input id="mobile" formControlName="Mobile" type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="departementId">Département :</label>
+        <select id="departementId" formControlName="departementId">
+          <option *ngFor="let dept of departements" [value]="dept.id">
+            {{ dept.description }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Sauvegarder</button>
+        <button type="button" class="btn-cancel" (click)="closePopup()">Annuler</button>
+      </div>
+    </form>
   </div>
-  
+</div>

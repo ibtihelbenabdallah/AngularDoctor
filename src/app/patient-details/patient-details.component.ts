@@ -28,7 +28,7 @@ export class PatientDetailsComponent implements OnInit{
       this.patientService.getPatientById(this.idcourant).subscribe((Patient) => {
         this.patient = Patient;
         this.form = new FormGroup({
-            id: new FormControl(Patient.id, [Validators.required]),
+          id: new FormControl(Patient.id, [Validators.required]),
             Name: new FormControl(Patient.Name, [Validators.required]),
             Email: new FormControl(Patient.Email, [Validators.required]),
             Mobile: new FormControl(Patient.Mobile, [Validators.required]),

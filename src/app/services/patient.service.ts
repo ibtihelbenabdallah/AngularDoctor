@@ -18,16 +18,16 @@ export class PatientService {
     return this.httpClient.post<Patient>('http://localhost:3000/Patient', P);
   }
 
-  deletePatient(id: string): Observable<void> {
-    return this.httpClient.delete<void>(`http://localhost:3000/Patient/${id}`);
+  deletePatient(idPatient: string): Observable<void> {
+    return this.httpClient.delete<void>(`http://localhost:3000/Patient/${idPatient}`);
   }
-  updatePatient(P:Patient,id:string) : Observable<void> 
+  updatePatient(P:Patient,idPatient:string) : Observable<void> 
   {
-    return this.httpClient.put<void>(`http://localhost:3000/Patient/${id}`, P);
+    return this.httpClient.put<void>(`http://localhost:3000/Patient/${idPatient}`, P);
   }
-  getPatientById(id:string) : Observable<Patient> 
+  getPatientById(idPatient:string) : Observable<Patient> 
   {
-    return this.httpClient.get<Patient>(`http://localhost:3000/Patient/${id}`);
+    return this.httpClient.get<Patient>(`http://localhost:3000/Patient/${idPatient}`);
   }
 
   

@@ -1,9 +1,7 @@
 <div class="doctor-interface-container">
   <!-- Actions Header -->
   <div class="header-actions">
-    <button mat-raised-button color="primary" (click)="openAddDoctorDialog()">
-      <mat-icon>add</mat-icon> Add Doctor
-    </button>
+    <button mat-raised-button color="primary" (click)="openAddDoctorDialog()">Add doctor</button>
   </div>
 
   <!-- Table Container -->
@@ -18,14 +16,20 @@
 
       <!-- Name Column -->
       <ng-container matColumnDef="Name">
-        <th mat-header-cell *matHeaderCellDef> Nom </th>
+        <th mat-header-cell *matHeaderCellDef> Name </th>
         <td mat-cell *matCellDef="let doctor"> {{doctor.Name}} </td>
       </ng-container>
 
       <!-- Specialization Column -->
       <ng-container matColumnDef="Specialization">
-        <th mat-header-cell *matHeaderCellDef> Spécialisation </th>
+        <th mat-header-cell *matHeaderCellDef> Specialization </th>
         <td mat-cell *matCellDef="let doctor"> {{doctor.Specialization}} </td>
+      </ng-container>
+
+      <!-- Department Column -->
+      <ng-container matColumnDef="Department">
+        <th mat-header-cell *matHeaderCellDef> Departement </th>
+        <td mat-cell *matCellDef="let doctor"> {{doctor.departmentName}} </td>
       </ng-container>
 
       <!-- Email Column -->
@@ -47,7 +51,7 @@
           <button mat-icon-button [routerLink]="['/doctorDetails', doctor.id]" matTooltip="Voir les détails">
             <mat-icon>launch</mat-icon>
           </button>
-          <button mat-icon-button color="warn" (click)="delete(doctor.id)" matTooltip="Supprimer le médecin">
+          <button mat-icon-button color="warn" (click)="delete(doctor.id)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>
@@ -58,12 +62,6 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
-    <!-- Pagination -->
-    <mat-paginator
-      [length]="dataSource.length"
-      [pageSize]="20"
-      showFirstLastButtons
-      aria-label="Table Pagination">
-    </mat-paginator>
+    <mat-paginator [length]="dataSource.length" [pageSize]="20" showFirstLastButtons></mat-paginator>
   </div>
 </div>

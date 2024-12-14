@@ -1,0 +1,26 @@
+
+<h2 mat-dialog-title>New departement</h2>
+<mat-dialog-content>
+  <form [formGroup]="addDepartementForm" class="new-doctor-form">
+  
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>description departement</mat-label>
+      <input matInput formControlName="description" />
+      <mat-error *ngIf="addDepartementForm.get('description')?.hasError('required')">description is required</mat-error>
+    </mat-form-field>
+
+    
+    <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>specialisation departement</mat-label>
+        <input matInput formControlName="specialisation" />
+        <mat-error *ngIf="addDepartementForm.get('specialisation')?.hasError('required')">specialisation is required</mat-error>
+      </mat-form-field>
+    
+    
+      
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="warn" (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" [disabled]="addDepartementForm.invalid" (click)="addDepartement()">Save</button>
+</mat-dialog-actions>
