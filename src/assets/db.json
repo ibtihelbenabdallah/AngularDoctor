@@ -1,17 +1,6 @@
 {
   "Doctor": [
     {
-      "id": "e74f",
-      "Name": "malak",
-      "Gender": "female",
-      "Specialization": "General Medicine",
-      "Email": "cf@gmail.com",
-      "Mobile": "52874125",
-      "Education": "isims",
-      "Experience": "1+ years",
-      "DutyTiming": "08:00 AM - 05:00 PM"
-    },
-    {
       "id": "ab55",
       "Name": "malak derbel",
       "Gender": "Female",
@@ -21,6 +10,17 @@
       "Education": "isims",
       "Experience": "5+ years",
       "DutyTiming": "10:00 AM - 07:00 PM"
+    },
+    {
+      "id": "90d6",
+      "Name": "ibtuhel",
+      "Gender": "Female",
+      "Mobile": "85784589",
+      "Email": "ibthel@gmail.com",
+      "Specialization": "Cardiology",
+      "Education": "isims",
+      "Experience": "1+ years",
+      "DutyTiming": "08:00 AM - 05:00 PM"
     }
   ],
   "Patient": [
@@ -65,34 +65,6 @@
       "BloodGroup": "B+",
       "Gender": "Male",
       "Symptoms": "Physical aches or pain, Memory difficulties or personality change"
-    },
-    {
-      "id": "5",
-      "Name": "Mercy",
-      "Text": "Mercy",
-      "DOB": "2005-05-29T00:00:00.000Z",
-      "Mobile": "(717) 555-5444",
-      "Email": "mercy60@sample.com",
-      "Address": "14 Garrett Hill",
-      "Disease": "Skin Hives",
-      "DepartmentName": "DERMATOLOGY",
-      "BloodGroup": "AB-",
-      "Gender": "Female",
-      "Symptoms": "Outbreak of swollen, pale red bumps or plaques"
-    },
-    {
-      "id": "6",
-      "Name": "Richa",
-      "Text": "Richa",
-      "DOB": "1989-11-29T00:00:00.000Z",
-      "Mobile": "(206) 555-4444",
-      "Email": "richa46@mail.com",
-      "Address": "Coventry House\nMiner Rd.",
-      "Disease": "Arm Fracture",
-      "DepartmentName": "ORTHOPEDICS",
-      "BloodGroup": "B+",
-      "Gender": "Female",
-      "Symptoms": "Swelling, warmth, or redness in the joint"
     }
   ],
   "Consultation": [
@@ -104,6 +76,15 @@
       "ConsultationTime": "12:12",
       "Reason": "kkmom",
       "Notes": "jomom"
+    },
+    {
+      "id": "c2fb",
+      "PatientName": "Milka",
+      "DoctorName": "ibtuhel",
+      "Date": "1212-12-12",
+      "ConsultationTime": "12:12",
+      "Reason": "fever ",
+      "Notes": "no"
     }
   ]
 }
