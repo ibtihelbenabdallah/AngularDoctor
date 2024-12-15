@@ -27,7 +27,7 @@ export class DoctorComponent implements OnInit {
         const department = departments.find((dept: { id: any; }) => dept.id === doctor.departementId);
         return {
           ...doctor,
-          departmentName: department ? department.description : 'N/A'  // Ajouter le nom du département
+          departmentName: department ? department.specialisation : 'N/A'  // Ajouter le nom du département
         };
       });
     });
@@ -48,7 +48,7 @@ export class DoctorComponent implements OnInit {
             const department = departments.find((dept: { id: any; }) => dept.id === doctor.departementId);
             return {
               ...doctor,
-              departmentName: department ? department.description : 'N/A'
+              departmentName: department ? department.specialisation : 'N/A'
             };
           });
         });
@@ -64,7 +64,7 @@ export class DoctorComponent implements OnInit {
             const department = departments.find((dept: { id: any; }) => dept.id === doctor.departementId);
             return {
               ...doctor,
-              departmentName: department ? department.description : 'N/A'
+              departmentName: department ? department.specialisation : 'N/A'
             };
           });
         });

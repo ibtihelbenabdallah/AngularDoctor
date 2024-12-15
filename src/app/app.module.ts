@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -25,10 +26,8 @@ import { AddPatientDialogComponent } from './add-patient-dialog/add-patient-dial
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { ConsultationComponent } from './consultation/consultation.component';
 import { AddConsultationDialogComponent } from './add-consultation-dialog/add-consultation-dialog.component';
-
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'; // Ajoutez cette ligne
-
 import { ConsultationService } from './services/consultation.service';
 import { DoctorService } from './services/doctor.service';
 import { PatientService } from './services/patient.service';
@@ -44,7 +43,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConsultationDetailsComponent } from './consultation-details/consultation-details.component';
 import { NgChartsModule } from 'ng2-charts';
 
-import {  } from 'ng2-charts';
 
 
 
@@ -92,6 +90,8 @@ import {  } from 'ng2-charts';
   MatDatepickerModule,
   MatNativeDateModule,
   NgChartsModule,
+  RouterModule
+  
   
     
   
