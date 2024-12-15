@@ -1,62 +1,107 @@
 <div *ngIf="doctor" class="doctor-card">
-  <h1>Doctor details</h1>
+  <h1>Doctor Details</h1>
   <div class="doctor-info">
     <p><strong>ID:</strong> {{ doctor.id }}</p>
     <p><strong>Name:</strong> {{ doctor.Name }}</p>
-    <p><strong>Specialization:</strong> {{ doctor.Specialization }}</p>
+    <p><strong>Gender:</strong> {{ doctor.Gender }}</p>
     <p><strong>Email:</strong> {{ doctor.Email }}</p>
     <p><strong>Mobile:</strong> {{ doctor.Mobile }}</p>
-    <p><strong>Departement:</strong> {{ doctor.Department?.description }}</p> <!-- Afficher le département actuel -->
-
+    <p><strong>Departement:</strong> {{ doctor.Department?.specialisation }}</p>
+    <p><strong>Duty Timing:</strong> {{ doctor.DutyTiming }}</p>
   </div>
-  
-  <!-- Bouton Modifier -->
+
+  <!-- Edit Button -->
   <button class="btn-edit" (click)="openEditPopup()">Edit</button>
 </div>
 
-<!-- Si aucune information n'est trouvée -->
+<!-- If no doctor found -->
 <div *ngIf="!doctor" class="no-doctor">
   <p>The doctor was not found.</p>
 </div>
 
-<!-- Pop-up -->
+<!-- Popup -->
 <div *ngIf="isPopupOpen" class="popup-overlay">
   <div class="popup-content">
-    <h2>Modifier le médecin</h2>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="name">Nom :</label>
-        <input id="name" formControlName="Name" type="text">
-      </div>
+    <h2>Edit Doctor</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="new-doctor-form">
+     <!-- Personal Information Section -->
+<div class="form-section">
+  <h3>Personal Information</h3>
+  <mat-form-field appearance="outline" floatLabel="always" class="long-field">
+    <mat-label>Doctor Name</mat-label>
+    <input matInput formControlName="Name" />
+    <mat-error *ngIf="form.get('Name')?.hasError('required')">
+      Name is required
+    </mat-error>
+  </mat-form-field>
 
-      <div class="form-group">
-        <label for="specialization">Spécialisation :</label>
-        <input id="specialization" formControlName="Specialization" type="text">
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email :</label>
-        <input id="email" formControlName="Email" type="email">
-      </div>
-
-      <div class="form-group">
-        <label for="mobile">Mobile :</label>
-        <input id="mobile" formControlName="Mobile" type="text">
-      </div>
-
-      <div class="form-group">
-        <label for="departementId">Département :</label>
-        <select id="departementId" formControlName="departementId">
-          <option *ngFor="let dept of departements" [value]="dept.id">
-            {{ dept.description }}
-          </option>
-        </select>
-      </div>
-
-      <div class="form-actions">
-        <button type="submit" class="btn-submit">Sauvegarder</button>
-        <button type="button" class="btn-cancel" (click)="closePopup()">Annuler</button>
-      </div>
-    </form>
+  <div class="gender-container">
+    <label class="gender-label">Gender</label>
+    <mat-radio-group formControlName="Gender" class="gender-group">
+      <mat-radio-button value="Male">Male</mat-radio-button>
+      <mat-radio-button value="Female">Female</mat-radio-button>
+    </mat-radio-group>
+    <mat-error *ngIf="form.get('Gender')?.hasError('required')"></mat-error>
   </div>
+</div>
+
+<!-- Contact Details Section -->
+<div class="form-section">
+  <h3>Contact Details</h3>
+  <mat-form-field appearance="outline" floatLabel="always" class="short-field">
+    <mat-label>Mobile Number</mat-label>
+    <input matInput formControlName="Mobile" placeholder="Enter 8-digit number" />
+    <mat-error *ngIf="form.get('Mobile')?.hasError('pattern')">
+      Invalid mobile number
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" floatLabel="always" class="short-field email-field">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="Email" />
+    <mat-error *ngIf="form.get('Email')?.hasError('email')">
+      Invalid email address
+    </mat-error>
+  </mat-form-field>
+</div>
+<!-- Department Section -->
+<div class="form-section">
+  <h3>Professional Details</h3>
+  <mat-form-field appearance="outline" floatLabel="always" class="long-field">
+    <mat-label>Department</mat-label>
+    <mat-select formControlName="departementId">
+      <mat-option *ngFor="let dept of departements" [value]="dept.id">
+        {{ dept.specialisation }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('departementId')?.hasError('required')">
+      Department is required
+    </mat-error>
+  </mat-form-field>
+</div>
+
+<!-- Duty Timing Section -->
+<div class="form-section">
+  <h3>Duty Timing</h3>
+  <mat-form-field appearance="outline" floatLabel="always" class="long-field">
+    <mat-label>Duty Timing</mat-label>
+    <mat-select formControlName="DutyTiming">
+      <mat-option *ngFor="let timing of dutyTimingsData" [value]="timing">
+        {{ timing }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('DutyTiming')?.hasError('required')">
+      Duty timing is required
+    </mat-error>
+  </mat-form-field>
+</div>
+
+
+ <!-- Form Actions -->
+ <div class="form-actions">
+  <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Save</button>
+  <button type="button" mat-stroked-button color="warn" (click)="closePopup()">Cancel</button>
+</div>
+</form>
+</div>
 </div>

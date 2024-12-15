@@ -16,15 +16,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConsultationDetailsComponent } from './consultation-details/consultation-details.component';
 
 
-//const routes: Routes = [
- //{path: 'doctors', component: DoctorComponent},
-  //{ path: 'doctorDetails/:id', component: DoctorDetailsComponent },
-  //{path: 'patients', component: PatientComponent},
-  //{ path: 'patientDetails/:id', component: PatientDetailsComponent },
-  //
-  //{ path: 'login', component: LoginComponent },
-  //{ path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirection par défaut vers login
-//];
 const routes: Routes = [
   // Redirection par défaut vers '/login'
   { path: '', redirectTo: 'acceuil', pathMatch: 'full' },
@@ -43,8 +34,8 @@ const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-      
-      { path: 'doctors', component: DoctorComponent },
+      { path: 'dashboard', component: DashboardComponent },
+     { path: 'doctors', component: DoctorComponent },
       { path: 'doctorDetails/:id', component: DoctorDetailsComponent },
       { path: 'patients', component: PatientComponent },
       { path: 'patientDetails/:id', component: PatientDetailsComponent },
@@ -52,7 +43,7 @@ const routes: Routes = [
       { path: 'consultationDetails/:id', component: ConsultationDetailsComponent },
       { path: 'departements', component: DepartementComponent },
       { path: 'departementDetails/:id', component: DepartementDetailsComponent },
-      { path: 'dashboard', component: DashboardComponent },
+     
 
     ],
   },

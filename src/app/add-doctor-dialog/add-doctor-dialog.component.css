@@ -1,85 +1,86 @@
-/* Form styling */
+/* Dialog content styling */
+mat-dialog-content {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+/* Form styling: Keep the form compact */
 .new-doctor-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  /* Gender section */
-  .gender-container {
-    display: flex;
-    flex-direction: column;
-    margin: 8px 0;
-  }
-  
-  .gender-label {
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .gender-group {
-    display: flex;
-    gap: 16px;
-  }
-  
-  /* Form Field Label Styling */
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-  
-  /* Label Icons */
-  mat-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  mat-label i {
-    color: #3498db;
-  }
-  
-  /* Input fields */
-  mat-input-element {
-    font-size: 14px;
-  }
-  
-  /* Error messages */
-  mat-error {
-    color: #e74c3c;
-  }
-  
-  /* Action Buttons */
-  mat-dialog-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-  }
-  
-  button[mat-raised-button] {
-    background-color: #3498db;
-    color: white;
-  }
-  
-  button[mat-stroked-button] {
-    border-color: #e74c3c;
-    color: #e74c3c;
-  }
-  
-  button[mat-raised-button]:hover {
-    background-color: #2980b9;
-  }
-  
-  button[mat-stroked-button]:hover {
-    background-color: #e74c3c;
-    color: white;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Increased gap between fields */
+}
+
+/* Form sections */
+.form-section {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #ddd;
+}
+
+/* Specific field width adjustments */
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+/* Align Experience and Department in the same row */
+.inline-fields {
+  display: flex;
+  gap: 16px;
+}
+
+/* Make certain fields longer */
+.long-field {
+  width: 100%;
+}
+
+/* Shorter fields for Mobile and Email */
+.short-field {
+  width: 100%;
+}
+
+/* Align Education, Experience, and Department properly */
+.half-field {
+  width: 48%;
+}
+
+/* Duty Timing section styling */
+.long-field {
+  width: 100%;
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Raised button and hover state */
+button[mat-raised-button] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[mat-raised-button]:hover {
+  background-color: #0056b3;
+}
+
+/* Stroked button styling */
+button[mat-stroked-button] {
+  border-color: #6c757d;
+  color: #6c757d;
+}
+
+button[mat-stroked-button]:hover {
+  border-color: #343a40;
+  color: #343a40;
+}
+
+/* Focused field label color */
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #3498db;
+}

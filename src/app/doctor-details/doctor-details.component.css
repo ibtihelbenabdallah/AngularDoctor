@@ -149,30 +149,26 @@ p {
   justify-content: space-between;
 }
 
-.btn-submit, .btn-cancel {
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s;
+/* Update width for long input fields */
+.long-field {
+  width: 100%; /* Ensures full width for longer fields */
 }
 
-.btn-submit {
-  background-color: #27ae60;
-  color: white;
-  border: none;
+/* Ensure space between mobile and email fields */
+.email-field {
+  margin-top: 15px; /* Adds space between mobile and email fields */
 }
 
-.btn-submit:hover {
-  background-color: #2ecc71;
+/* Ensure all other sections maintain clean styling */
+.form-section {
+  margin-bottom: 20px;
 }
 
-.btn-cancel {
-  background-color: #e74c3c;
-  color: white;
-  border: none;
+/* You can also adjust other form field widths for responsiveness */
+.short-field {
+  width: 48%; /* Keep mobile fields at 48% width */
 }
 
-.btn-cancel:hover {
-  background-color: #c0392b;
+.inline-fields {
+  width: 100%; /* For fields that need to occupy full width */
 }

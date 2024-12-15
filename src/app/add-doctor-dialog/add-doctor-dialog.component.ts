@@ -14,9 +14,9 @@ export class AddDoctorDialogComponent implements OnInit {
   departments: Departement[] = []; // Stocker la liste des départements
 
   // Sample data for dropdown fields
-  specializationData = ['General Medicine', 'Cardiology', 'Neurology'];
-  experienceData = ['1+ years', '3+ years', '5+ years'];
-  dutyTimingsData = ['08:00 AM - 05:00 PM', '10:00 AM - 07:00 PM'];
+  //specializationData = ['General Medicine', 'Cardiology', 'Neurology'];
+  experienceData = ['1+ years', '3+ years', '5+ years','7+ years','10+ years'];
+  dutyTimingsData = ['08:00 AM - 05:00 PM', '10:00 AM - 07:00 PM', '12:00 PM - 09:00 PM', '04:00 PM - 12:00 AM'];
   dataSource: any;
 
   constructor(
@@ -31,7 +31,7 @@ export class AddDoctorDialogComponent implements OnInit {
       Gender: ['', Validators.required],
       Mobile: ['', [Validators.required, Validators.pattern(/^\d{8}$/)]], // Updated pattern
       Email: ['', [Validators.required, Validators.email]],
-      Specialization: ['', Validators.required],
+     // Specialization: ['', Validators.required],
       Education: ['', Validators.required],
       Experience: ['', Validators.required],
       DutyTiming: ['', Validators.required],

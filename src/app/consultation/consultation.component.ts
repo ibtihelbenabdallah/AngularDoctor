@@ -47,7 +47,8 @@ export class ConsultationComponent implements OnInit {
 
   openAddConsultationDialog(): void {
     const dialogRef = this.dialog.open(AddConsultationDialogComponent, {
-      width: '500px',
+      width: '650px',
+      height: '650px',
     });
 
     dialogRef.afterClosed().subscribe((result) => {

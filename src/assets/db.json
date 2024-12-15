@@ -1,61 +1,61 @@
 {
   "Doctor": [
     {
-      "id": "e74f",
-      "Name": "malak",
-      "Specialization": "General Medicine",
-      "Email": "cf@gmail.com",
-      "Mobile": "52874125",
-      "departementId": "3"
-    },
-    {
-      "id": "212a",
-      "Name": "ssszz",
-      "Specialization": "Cardiology",
-      "Email": "eeee@gmail.com",
-      "Mobile": "98767687",
-      "departementId": "4"
-    },
-    {
-      "id": "84ff",
-      "Name": "IBTIHE ",
+      "id": "182b",
+      "Name": "ibtihel benAbdallah",
       "Gender": "Female",
-      "Mobile": "20138374",
-      "Email": "eeee@gmail.com",
-      "Specialization": "Cardiology",
-      "Education": "ISISMS",
-      "Experience": "3+ years",
-      "DutyTiming": "10:00 AM - 07:00 PM",
-      "departementId": "3"
+      "Email": "ibtihel@gmail.com",
+      "Mobile": "21548796",
+      "departementId": "d312",
+      "DutyTiming": "04:00 PM - 12:00 AM"
     },
     {
-      "id": "e38e",
-      "Name": "mmWW",
-      "Specialization": "Cardiology",
-      "Email": "ibtihelbenabdallah94@gmail.com",
-      "Mobile": "32435464",
-      "departementId": "4"
-    },
-    {
-      "id": "d35a",
-      "Name": "malak derbel",
-      "Specialization": "Cardiology",
-      "Email": "ibtihelbenabdallah94@gmail.com",
-      "Mobile": "20138374",
-      "departementId": "1"
-    },
-    {
-      "id": "5088",
-      "Name": "h",
+      "id": "dbcf",
+      "Name": "Malak Derbel",
       "Gender": "Female",
-      "Mobile": "12121212",
+      "Mobile": "29268392",
       "Email": "derbelmalak@gmail.com",
-      "Specialization": "Cardiology",
-      "Education": "ferf",
-      "Experience": "1+ years",
+      "Education": "Faculté de médecine Ibn El Jazzar de Sousse",
+      "Experience": "5+ years",
       "DutyTiming": "08:00 AM - 05:00 PM",
-      "departementId": "2",
-      "idDoctor": "idhv9z2jlng"
+      "departementId": "1",
+      "idDoctor": "idynz0qj449"
+    },
+    {
+      "id": "03da",
+      "Name": "fatma maalej",
+      "Gender": "Female",
+      "Mobile": "25874156",
+      "Email": "fatma@gmail.com",
+      "Education": "Faculté de Médecine de Tunis",
+      "Experience": "10+ years",
+      "DutyTiming": "10:00 AM - 07:00 PM",
+      "departementId": "3",
+      "idDoctor": "ide98pvuqo9"
+    },
+    {
+      "id": "6450",
+      "Name": "chedli charfi",
+      "Gender": "Male",
+      "Mobile": "20147856",
+      "Email": "chedli@gmail.com",
+      "Education": "Faculté de Médecine de Monastir",
+      "Experience": "5+ years",
+      "DutyTiming": "12:00 PM - 09:00 PM",
+      "departementId": "4",
+      "idDoctor": "idb1u7jqff2"
+    },
+    {
+      "id": "5ac7",
+      "Name": "ahmed hachicha",
+      "Gender": "Male",
+      "Mobile": "55223366",
+      "Email": "ahmed@gmail.com",
+      "Education": "Faculté de Médecine de Tunis",
+      "Experience": "7+ years",
+      "DutyTiming": "08:00 AM - 05:00 PM",
+      "departementId": "6b3d",
+      "idDoctor": "idvunnnpo01"
     }
   ],
   "Patient": [
@@ -114,48 +114,44 @@
       "BloodGroup": "B+",
       "Gender": "Female",
       "Symptoms": "Swelling, warmth, or redness in the joint"
-    },
-    {
-      "id": "d1d6",
-      "Name": "hela ",
-      "Email": "hela@gmail.com",
-      "Mobile": "12234556",
-      "Disease": "fever",
-      "Gender": "Male",
-      "BloodGroup": "B+",
-      "DutyTiming": "ff",
-      "DOB": "gg",
-      "Address": "gg",
-      "Symptoms": "gg"
     }
   ],
   "Consultation": [
     {
+      "id": "b103",
       "PatientName": "Richa",
-      "DoctorName": "malak derbel",
-      "Date": "2024-12-13",
-      "ConsultationTime": "12:12",
-      "Notes": "hi",
-      "Reason": "kkmom",
-      "id": "b5f6"
+      "DoctorName": "fatma maalej",
+      "Date": "2024-12-12",
+      "ConsultationTime": "12:00",
+      "Reason": "checkup",
+      "Notes": "N/A"
     },
     {
-      "id": "18c0",
-      "PatientName": "Milka",
-      "DoctorName": "abdou",
-      "Date": "1212-12-12",
-      "ConsultationTime": "12:12",
-      "Reason": "mm",
-      "Notes": "mm"
+      "id": "eb40",
+      "PatientName": "Adams",
+      "DoctorName": "ibtihel benAbdallah",
+      "Date": "2024-12-14",
+      "ConsultationTime": "13:00",
+      "Reason": "fever",
+      "Notes": "first time"
     },
     {
-      "id": "51d4",
-      "PatientName": "Milka",
-      "DoctorName": "ssszz",
-      "Date": "1222-12-12",
-      "ConsultationTime": "11:11",
-      "Reason": "n",
-      "Notes": "ht"
+      "id": "8347",
+      "PatientName": "Janet",
+      "DoctorName": "Malak Derbel",
+      "Date": "2024-12-15",
+      "ConsultationTime": "10:00",
+      "Reason": "heartache",
+      "Notes": "was running"
+    },
+    {
+      "id": "333f",
+      "PatientName": "Mercy",
+      "DoctorName": "chedli charfi",
+      "Date": "2024-12-08",
+      "ConsultationTime": "08:00",
+      "Reason": "checkup",
+      "Notes": "second radio"
     }
   ],
   "admin": [
@@ -179,22 +175,37 @@
     {
       "id": "1",
       "description": "Département 1",
-      "specialisation": "Cardiologies"
+      "specialisation": "Cardiology"
     },
     {
       "id": "3",
       "description": "Département 3",
-      "specialisation": "Chirurgie Orthopédique"
+      "specialisation": "Gastroenterology"
     },
     {
       "id": "4",
       "description": "Département 4",
-      "specialisation": "Pédiatrie"
+      "specialisation": "Radiology"
     },
     {
       "id": "2",
       "description": "Département 2",
-      "specialisation": "Oncologie"
+      "specialisation": "Endocrinology"
+    },
+    {
+      "id": "6b3d",
+      "description": "Département 5",
+      "specialisation": "Dermatology"
+    },
+    {
+      "id": "6a48",
+      "description": "Département 6",
+      "specialisation": "Pulmonology"
+    },
+    {
+      "id": "d312",
+      "description": "Département 7",
+      "specialisation": "Pediatrics"
     }
   ]
 }

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       (admin) => {
         if (admin) {
           // Si l'admin existe, rediriger vers la page protégée
-          this.router.navigate(['/doctors']);
+          this.router.navigate(['/dashboard']);
         } else {
           this.errorMessage = 'Email ou mot de passe incorrect';
         }

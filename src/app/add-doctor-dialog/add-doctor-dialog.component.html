@@ -1,80 +1,116 @@
-<h2 mat-dialog-title>New Doctor</h2>
+<h2 mat-dialog-title>Add New Doctor</h2>
 <mat-dialog-content>
   <form [formGroup]="addDoctorForm" class="new-doctor-form">
-  
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label><i class="fas fa-user"></i> Doctor Name</mat-label>
-      <input matInput formControlName="Name" />
-      <mat-error *ngIf="addDoctorForm.get('Name')?.hasError('required')">Name is required</mat-error>
-    </mat-form-field>
+    <!-- Personal Information Section -->
+    <div class="form-section">
+      <h3>Personal Information</h3>
+      <mat-form-field appearance="outline" floatLabel="always" class="long-field">
+        <mat-label>
+          <i class="fas fa-user"></i> Doctor Name
+        </mat-label>
+        <input matInput formControlName="Name" />
+        <mat-error *ngIf="addDoctorForm.get('Name')?.hasError('required')">
+          Name is required
+        </mat-error>
+      </mat-form-field>
 
-    <div class="gender-container">
-      <label class="gender-label"><i class="fas fa-venus-mars"></i> Gender</label>
-      <mat-radio-group formControlName="Gender" class="gender-group">
-        <mat-radio-button value="Male">Male</mat-radio-button>
-        <mat-radio-button value="Female">Female</mat-radio-button>
-      </mat-radio-group>
-      <mat-error *ngIf="addDoctorForm.get('Gender')?.hasError('required')">Gender is required</mat-error>
+      <div class="gender-container">
+        <label class="gender-label"><i class="fas fa-venus-mars"></i> Gender</label>
+        <mat-radio-group formControlName="Gender" class="gender-group">
+          <mat-radio-button value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female">Female</mat-radio-button>
+        </mat-radio-group>
+        <mat-error *ngIf="addDoctorForm.get('Gender')?.hasError('required')">
+        
+        </mat-error>
+      </div>
     </div>
 
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label><i class="fas fa-phone"></i> Mobile Number</mat-label>
-      <input matInput formControlName="Mobile" placeholder="Enter 8-digit number" />
-      <mat-error *ngIf="addDoctorForm.get('Mobile')?.hasError('pattern')">Invalid mobile number</mat-error>
-    </mat-form-field>
+    <!-- Contact Details Section -->
+    <div class="form-section">
+      <h3>Contact Details</h3>
+      <mat-form-field appearance="outline" floatLabel="always" class="short-field">
+        <mat-label>
+          <i class="fas fa-phone"></i> Mobile Number
+        </mat-label>
+        <input matInput formControlName="Mobile" placeholder="Enter 8-digit number" />
+        <mat-error *ngIf="addDoctorForm.get('Mobile')?.hasError('pattern')">
+          Invalid mobile number
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label><i class="fas fa-envelope"></i> Email</mat-label>
-      <input matInput formControlName="Email" />
-      <mat-error *ngIf="addDoctorForm.get('Email')?.hasError('email')">Invalid email address</mat-error>
-    </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" class="short-field">
+        <mat-label>
+          <i class="fas fa-envelope"></i> Email
+        </mat-label>
+        <input matInput formControlName="Email" />
+        <mat-error *ngIf="addDoctorForm.get('Email')?.hasError('email')">
+          Invalid email address
+        </mat-error>
+      </mat-form-field>
+    </div>
 
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label><i class="fas fa-stethoscope"></i> Specialization</mat-label>
-      <mat-select formControlName="Specialization">
-        <mat-option *ngFor="let specialization of specializationData" [value]="specialization">
-          {{ specialization }}
-        </mat-option>
-      </mat-select>
-      <mat-error *ngIf="addDoctorForm.get('Specialization')?.hasError('required')">Specialization is required</mat-error>
-    </mat-form-field>
+    <!-- Professional Details Section -->
+    <div class="form-section">
+      <h3>Professional Details</h3>
+      <mat-form-field appearance="outline" floatLabel="always" class="inline-fields">
+        <mat-label>
+          <i class="fas fa-graduation-cap"></i> Education
+        </mat-label>
+        <input matInput formControlName="Education" />
+        <mat-error *ngIf="addDoctorForm.get('Education')?.hasError('required')">
+          Education is required
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label><i class="fas fa-graduation-cap"></i> Education</mat-label>
-      <input matInput formControlName="Education" />
-      <mat-error *ngIf="addDoctorForm.get('Education')?.hasError('required')">Education is required</mat-error>
-    </mat-form-field>
+      <div class="inline-fields">
+        <mat-form-field appearance="outline" floatLabel="always" class="half-field">
+          <mat-label>
+            <i class="fas fa-briefcase"></i> Experience
+          </mat-label>
+          <mat-select formControlName="Experience">
+            <mat-option *ngFor="let experience of experienceData" [value]="experience">
+              {{ experience }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="addDoctorForm.get('Experience')?.hasError('required')">
+            Experience is required
+          </mat-error>
+        </mat-form-field>
 
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label><i class="fas fa-briefcase"></i> Experience</mat-label>
-      <mat-select formControlName="Experience">
-        <mat-option *ngFor="let experience of experienceData" [value]="experience">
-          {{ experience }}
-        </mat-option>
-      </mat-select>
-      <mat-error *ngIf="addDoctorForm.get('Experience')?.hasError('required')">Experience is required</mat-error>
-    </mat-form-field>
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>Department</mat-label>
-      <mat-select formControlName="departementId">
-        <mat-option *ngFor="let department of departments" [value]="department.id">
-          {{ department.description }}
-        </mat-option>
-      </mat-select>
-      <mat-error *ngIf="addDoctorForm.get('departementId')?.hasError('required')">Department is required</mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label><i class="fas fa-clock"></i> Duty Timing</mat-label>
-      <mat-select formControlName="DutyTiming">
-        <mat-option *ngFor="let timing of dutyTimingsData" [value]="timing">
-          {{ timing }}
-        </mat-option>
-      </mat-select>
-      <mat-error *ngIf="addDoctorForm.get('DutyTiming')?.hasError('required')">Duty timing is required</mat-error>
-    </mat-form-field>
+        <mat-form-field appearance="outline" floatLabel="always" class="half-field">
+          <mat-label>Department</mat-label>
+          <mat-select formControlName="departementId">
+            <mat-option *ngFor="let department of departments" [value]="department.id">
+              {{ department.specialisation }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="addDoctorForm.get('departementId')?.hasError('required')">
+            Department is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+  <!-- Duty Timing Section (Centered in its own section) -->
+  <div class="form-section timing-section">
+    <h3>Timing</h3>
+      <mat-form-field appearance="outline" floatLabel="always" class="long-field">
+        <mat-label>
+          <i class="fas fa-clock"></i> Duty Timing
+        </mat-label>
+        <mat-select formControlName="DutyTiming">
+          <mat-option *ngFor="let timing of dutyTimingsData" [value]="timing">
+            {{ timing }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="addDoctorForm.get('DutyTiming')?.hasError('required')">
+          Duty timing is required
+        </mat-error>
+      </mat-form-field>
+  </div>
+    </div>
   </form>
 </mat-dialog-content>
+
 <mat-dialog-actions align="end">
   <button mat-stroked-button color="warn" (click)="onNoClick()">Cancel</button>
   <button mat-raised-button color="primary" [disabled]="addDoctorForm.invalid" (click)="addDoctor()">Save</button>

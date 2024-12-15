@@ -33,8 +33,8 @@ export class PatientComponent  implements OnInit {
   // Ouvrir le dialog pour ajouter un médecin
   openAddPatientDialog(): void {
     const dialogRef = this.dialog.open(AddPatientDialogComponent, {
-      width: '600px', // Set the width
-      height: '700px',
+      width: '650px',
+      height: '650px',
 
     });
 

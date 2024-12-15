@@ -18,7 +18,7 @@ export class DoctorComponent implements OnInit {
     public dialog: MatDialog,
   ) {}
 
-  displayedColumns: string[] = ['Id', 'Name', 'Specialization', 'Department', 'Email', 'Mobile', 'Action'];
+  displayedColumns: string[] = ['Id', 'Name',  'Department', 'Email', 'Mobile', 'Action'];
 
   ngOnInit(): void {
     this.doctorService.GetAll().subscribe(([doctors, departments]) => {
@@ -35,8 +35,8 @@ export class DoctorComponent implements OnInit {
 
   openAddDoctorDialog(): void {
     const dialogRef = this.dialog.open(AddDoctorDialogComponent, {
-      width: '600px',
-      height: '700px',
+      width: '650px',
+      height: '650px',
     });
 
     dialogRef.afterClosed().subscribe((result: Doctor | undefined) => {
