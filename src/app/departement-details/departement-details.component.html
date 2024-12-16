@@ -1,26 +1,23 @@
 <div *ngIf="departement" class="doctor-card">
-    <h1>Department details</h1>
-    <div class="doctor-info">
-       <!--<p><strong>ID:</strong> {{ patient.idPatient }}</p> -->
-      <p><strong>Description :</strong> {{ departement.description }}</p>
-      <p><strong>Specialization :</strong> {{departement.specialisation }}</p>
-      
-      
-    </div>
-    
-    <!-- Bouton Modifier -->
-    <button class="btn-edit" (click)="openEditPopup()">Edit</button>
+  <h1>Department Details</h1>
+  <div class="doctor-info">
+    <!--<p><strong>ID:</strong> {{ patient.idPatient }}</p> -->
+    <p>🏢<strong>Description:</strong>  {{ departement.description }}</p>
+    <p>💼<strong>Specialization:</strong>  {{ departement.specialisation }}</p>
   </div>
   
-  <!-- Si aucune information n'est trouvée -->
-  <div *ngIf="!departement" class="no-doctor">
-    <p>The department was not found.</p>
-  </div>
-  
+  <!-- Edit Button -->
+  <button class="btn-edit" (click)="openEditPopup()">✏️ Edit</button>
+</div>
+
+<!-- If no department information is found -->
+<div *ngIf="!departement" class="no-doctor">
+  <p>❌ The department was not found.</p>
+</div>
   <!-- Pop-up -->
   <div *ngIf="isPopupOpen" class="popup-overlay">
     <div class="popup-content">
-      <h2>Modifier le departement</h2>
+      <h2>Edit Department</h2>
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="name">description :</label>
@@ -37,8 +34,8 @@
   
        
         <div class="form-actions">
-          <button type="submit" class="btn-submit">Sauvegarder</button>
-          <button type="button" class="btn-cancel" (click)="closePopup()">Annuler</button>
+          <button type="submit" mat-raised-button color="primary">Save</button>
+          <button type="button" mat-stroked-button color="warn" (click)="closePopup()">Cancel</button>
         </div>
       </form>
     </div>

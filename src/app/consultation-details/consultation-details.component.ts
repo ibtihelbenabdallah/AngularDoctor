@@ -72,7 +72,7 @@ export class ConsultationDetailsComponent implements OnInit {
   }
 
   loadDoctors(): void {
-    this.doctorService.GetAll().subscribe((data) => {
+    this.doctorService.GetAllDoctors().subscribe((data) => {
       this.doctors = data;
     });
   }

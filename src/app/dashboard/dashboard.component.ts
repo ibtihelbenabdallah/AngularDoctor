@@ -68,13 +68,22 @@ export class DashboardComponent implements OnInit {
       tooltip: {
         enabled: true,
       },
+      title: {
+        display: true, // Active l'affichage du titre
+        text: 'Number of Consultations by Doctor', // Texte du titre
+        font: {
+          size: 16, // Taille de la police
+          //weight: 'bold', // Style de police
+        },
+      },
     },
   };
 
   public pieChartDataByDoctor: ChartData<'pie'> = {
     labels: [],
     datasets: [
-      {
+      {       
+
         data: [],
         backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#FF5733'],
       },

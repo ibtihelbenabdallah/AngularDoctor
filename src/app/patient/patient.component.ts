@@ -18,7 +18,7 @@ export class PatientComponent  implements OnInit {
     public dialog: MatDialog,
   ) {}
 
-  displayedColumns: string[] = ['Id', 'Name', 'Email','Mobile',  'Disease','Gender','BloodGroup', 'Action'];
+  displayedColumns: string[] = ['Id', 'Name', 'Email','Mobile', 'Address','Gender', 'Action'];
 
   ngOnInit(): void {
     this.Ms.GetAll().subscribe((result) => {
@@ -33,7 +33,7 @@ export class PatientComponent  implements OnInit {
   // Ouvrir le dialog pour ajouter un médecin
   openAddPatientDialog(): void {
     const dialogRef = this.dialog.open(AddPatientDialogComponent, {
-      width: '650px',
+      width: '700px',
       height: '650px',
 
     });

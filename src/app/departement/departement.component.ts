@@ -37,8 +37,8 @@ export class DepartementComponent {
   // Ouvrir le dialog pour ajouter un médecin
   openAddDepartementDialog(): void {
     const dialogRef = this.dialog.open(AddDepartementDialogComponent, {
-      width: '600px', // Set the width
-      height: '700px', 
+      width: '350px', // Set the width
+      height: '350px', 
     });
 
    

@@ -14,6 +14,7 @@ export class PatientDetailsComponent implements OnInit{
   idcourant!: string;
   form!: FormGroup;
   isPopupOpen = false; // Variable pour suivre l'état du pop-up
+  bloodTypes: string[] = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
 
   constructor(
     private route: ActivatedRoute,
@@ -35,6 +36,9 @@ export class PatientDetailsComponent implements OnInit{
             Disease: new FormControl(Patient.Disease, [Validators.required]),
             Gender: new FormControl(Patient.Gender, [Validators.required]),
             BloodGroup: new FormControl(Patient.BloodGroup, [Validators.required]),
+            DOB: new FormControl(Patient.DOB, [Validators.required]),
+            Address: new FormControl(Patient.Address, [Validators.required]),
+            Symptoms: new FormControl(Patient.Symptoms, [Validators.required]),
 
           });
       });

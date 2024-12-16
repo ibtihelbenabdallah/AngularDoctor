@@ -30,8 +30,15 @@ button {
 
 button span.material-icons {
   font-size: 20px;
-  color: #007bff;
+  color:#7575FF;
 }
 button span.material-icons:hover {
-  color: #0056b3;
+  color:#7575FF;
 }
+  /* Actions en-tête */
+  .header-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+  }
+  

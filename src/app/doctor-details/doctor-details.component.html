@@ -1,19 +1,18 @@
 <div *ngIf="doctor" class="doctor-card">
   <h1>Doctor Details</h1>
   <div class="doctor-info">
-    <p><strong>ID:</strong> {{ doctor.id }}</p>
-    <p><strong>Name:</strong> {{ doctor.Name }}</p>
-    <p><strong>Gender:</strong> {{ doctor.Gender }}</p>
-    <p><strong>Email:</strong> {{ doctor.Email }}</p>
-    <p><strong>Mobile:</strong> {{ doctor.Mobile }}</p>
-    <p><strong>Departement:</strong> {{ doctor.Department?.specialisation }}</p>
-    <p><strong>Duty Timing:</strong> {{ doctor.DutyTiming }}</p>
+    <p><strong>🆔 ID:</strong> {{ doctor.id }}</p>
+    <p><strong>👨‍⚕️ Name:</strong> {{ doctor.Name }}</p>
+    <p><strong>🚻 Gender:</strong> {{ doctor.Gender }}</p>
+    <p><strong>📧 Email:</strong> {{ doctor.Email }}</p>
+    <p><strong>📱 Mobile:</strong> {{ doctor.Mobile }}</p>
+    <p><strong>🏥 Department:</strong> {{ doctor.Department?.specialisation }}</p>
+    <p><strong>🕓 Duty Timing:</strong> {{ doctor.DutyTiming }}</p>
   </div>
 
   <!-- Edit Button -->
-  <button class="btn-edit" (click)="openEditPopup()">Edit</button>
+  <button class="btn-edit" (click)="openEditPopup()">✏️ Edit</button>
 </div>
-
 <!-- If no doctor found -->
 <div *ngIf="!doctor" class="no-doctor">
   <p>The doctor was not found.</p>

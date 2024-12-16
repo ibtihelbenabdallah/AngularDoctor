@@ -29,7 +29,7 @@ export class AddPatientDialogComponent {
       Disease: ['', Validators.required],
       Gender: ['', Validators.required],
       BloodGroup: ['', Validators.required],
-      DutyTiming: ['', Validators.required],
+     // DutyTiming: ['', Validators.required],
       DOB: ['', Validators.required],
       Address: ['', Validators.required],
       Symptoms: ['', Validators.required]

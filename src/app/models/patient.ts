@@ -8,7 +8,7 @@ export interface Patient {
     Email: string;
     Address: string;
     Disease: string;
-    DepartmentName: string;
+   // DepartmentName: string;
     BloodGroup: string;
     Gender: 'Male' | 'Female';  // Peut être étendu selon le besoin
     Symptoms: string;

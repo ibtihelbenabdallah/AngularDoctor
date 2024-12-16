@@ -61,12 +61,12 @@ button {
 
 /* Raised button and hover state */
 button[mat-raised-button] {
-  background-color: #007bff;
+  background-color:#7575FF;
   color: white;
 }
 
 button[mat-raised-button]:hover {
-  background-color: #0056b3;
+  background-color:#5454f3;
 }
 
 /* Stroked button styling */
@@ -82,5 +82,5 @@ button[mat-stroked-button]:hover {
 
 /* Focused field label color */
 .mat-form-field.mat-focused .mat-form-field-label {
-  color: #3498db;
+  color: #7575FF;
 }

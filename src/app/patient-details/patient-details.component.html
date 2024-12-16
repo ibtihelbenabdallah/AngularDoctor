@@ -1,63 +1,124 @@
 <div *ngIf="patient" class="doctor-card">
-    <h1>Patient details</h1>
-    <div class="doctor-info">
-       <!--<p><strong>ID:</strong> {{ patient.idPatient }}</p> -->
-      <p><strong>Name:</strong> {{ patient.Name }}</p>
-      <p><strong>Email:</strong> {{ patient.Email }}</p>
-      <p><strong>Mobile:</strong> {{ patient.Mobile }}</p>
-      <p><strong>Disease:</strong> {{ patient.Disease }}</p>
-      <p><strong>Gender:</strong> {{ patient.Gender }}</p>
-      <p><strong>BloodGroup:</strong> {{ patient.BloodGroup }}</p>
-      
-    </div>
-    
-    <!-- Bouton Modifier -->
-    <button class="btn-edit" (click)="openEditPopup()">Edit</button>
+  <h1>Patient Details</h1>
+  <div class="doctor-info">
+    <p><strong>🆔 ID:</strong> {{ patient.id }}</p>
+    <p><strong>👤 Name:</strong> {{ patient.Name }}</p>
+    <p><strong>📧 Email:</strong> {{ patient.Email }}</p>
+    <p><strong>📱 Mobile:</strong> {{ patient.Mobile }}</p>
+    <p><strong>🚻 Gender:</strong> {{ patient.Gender }}</p>
+    <p><strong>🎂 Date of Birth:</strong> {{ patient.DOB }}</p>
+    <p><strong>🩸 Blood Group:</strong> {{ patient.BloodGroup }}</p>
+    <p><strong>💉 Disease:</strong> {{ patient.Disease }}</p>
+    <p><strong>🩺 Symptoms:</strong> {{ patient.Symptoms }}</p>
+    <p><strong>🏠 Address:</strong> {{ patient.Address }}</p>
+  </div>
 
-  </div>
-  
-  <!-- Si aucune information n'est trouvée -->
-  <div *ngIf="!patient" class="no-doctor">
-    <p>The patient was not found.</p>
-  </div>
-  
-  <!-- Pop-up -->
-  <div *ngIf="isPopupOpen" class="popup-overlay">
-    <div class="popup-content">
-      <h2>Modifier le patient</h2>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="name">Nom :</label>
-          <input id="name" formControlName="Name" type="text">
+  <button class="btn-edit" (click)="openEditPopup()">✏️ Edit</button>
+</div>
+
+<div *ngIf="!patient" class="no-doctor">
+  <p>The patient was not found.</p>
+</div>
+
+<!-- Popup -->
+<div *ngIf="isPopupOpen" class="popup-overlay">
+  <div class="popup-content">
+    <h2>Edit Patient</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Personal Information -->
+      <div class="form-section">
+        <h3>Personal Information</h3>
+<mat-form-field appearance="outline" floatLabel="always" class="long-field">
+  <mat-label>Patient Name</mat-label>
+  <input matInput formControlName="Name" />
+  <mat-error *ngIf="form.get('Name')?.hasError('required')">
+    Name is required
+  </mat-error>
+</mat-form-field>
+        <div class="gender-container">
+          <label class="gender-label">Gender</label>
+          <mat-radio-group formControlName="Gender" class="gender-group">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+          </mat-radio-group>
+          <mat-error *ngIf="form.get('Gender')?.hasError('required')"></mat-error>
         </div>
-  
-        <div class="form-group">
-          <label for="specialization">Email :</label>
-          <input id="specialization" formControlName="Email" type="text">
+      </div>
+
+      <!-- Contact Details -->
+      <div class="form-section">
+        <h3>Contact Details</h3>
+         <!-- Contact Details -->
+      <div class="form-section contact-details">
+        <mat-form-field appearance="outline" floatLabel="always" class="short-field">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput formControlName="Mobile" placeholder="Enter 8-digit number" />
+          <mat-error *ngIf="form.get('Mobile')?.hasError('pattern')">
+            Invalid mobile number
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" floatLabel="always" class="short-field email-field">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="Email" />
+          <mat-error *ngIf="form.get('Email')?.hasError('email')">
+            Invalid email address
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-section contact-details">
+        <div class="form-group short-field">
+          <label for="dob">Date of Birth:</label>
+          <input id="dob" matInput [matDatepicker]="picker" formControlName="DOB" />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </div>
-        <div class="form-group">
-            <label for="name">Mobile :</label>
-            <input id="name" formControlName="Mobile" type="text">
-          </div>
-          <div class="form-group">
-            <label for="name">Disease :</label>
-            <input id="name" formControlName="Disease" type="text">
-          </div>
-          <div class="form-group">
-            <label for="name">Gender :</label>
-            <input id="name" formControlName="Gender" type="text">
-          </div>
-          <div class="form-group">
-            <label for="name">BloodGroup :</label>
-            <input id="name" formControlName="BloodGroup" type="text">
-          </div>
-  
-       
-        <div class="form-actions">
-          <button type="submit" class="btn-submit">Sauvegarder</button>
-          <button type="button" class="btn-cancel" (click)="closePopup()">Annuler</button>
-        </div>
-      </form>
+
+      <mat-form-field appearance="outline" floatLabel="always" class="short-field">
+        <mat-label>Address</mat-label>
+        <textarea matInput formControlName="Address"></textarea>
+      </mat-form-field>
     </div>
   </div>
-  
+
+
+  <div class="form-section">
+ 
+    <mat-form-field appearance="outline" floatLabel="always" class="long-field">
+      <mat-label>Blood Group</mat-label>
+      <mat-select formControlName="BloodGroup">
+        <mat-option *ngFor="let group of bloodTypes" [value]="group">
+          {{ group }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <div class="form-section">
+    <h3>Medical Details</h3>
+    <mat-form-field appearance="outline" floatLabel="always" class="long-field">
+      <mat-label>Disease</mat-label>
+      <input matInput formControlName="Disease" />
+      <mat-error *ngIf="form.get('Disease')?.hasError('required')">
+        Disease is required
+      </mat-error>
+    </mat-form-field>
+    
+    <div class="spaced-field">
+      <mat-form-field appearance="outline" floatLabel="always" class="long-field">
+        <mat-label>Symptoms</mat-label>
+        <textarea matInput formControlName="Symptoms"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+    </div>
+  <!-- Form Actions -->
+  <div class="form-actions">
+    <button type="button" mat-raised-button color="primary" [disabled]="form.invalid">
+      Save
+    </button>
+    <button type="button" mat-stroked-button color="warn" (click)="closePopup()">
+      Cancel
+    </button>
+  </div>
+</form>

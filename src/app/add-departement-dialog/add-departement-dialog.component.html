@@ -3,17 +3,17 @@
 <mat-dialog-content>
   <form [formGroup]="addDepartementForm" class="new-doctor-form">
   
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>description departement</mat-label>
+    <mat-form-field appearance="outline" floatLabel="always" style="margin-top: 16px;">
+      <mat-label>Description :</mat-label>
       <input matInput formControlName="description" />
-      <mat-error *ngIf="addDepartementForm.get('description')?.hasError('required')">description is required</mat-error>
+      <mat-error *ngIf="addDepartementForm.get('description')?.hasError('required')">Description is required</mat-error>
     </mat-form-field>
 
     
     <mat-form-field appearance="outline" floatLabel="always">
-        <mat-label>specialisation departement</mat-label>
+        <mat-label>Specialisation :</mat-label>
         <input matInput formControlName="specialisation" />
-        <mat-error *ngIf="addDepartementForm.get('specialisation')?.hasError('required')">specialisation is required</mat-error>
+        <mat-error *ngIf="addDepartementForm.get('specialisation')?.hasError('required')">Specialisation is required</mat-error>
       </mat-form-field>
     
     

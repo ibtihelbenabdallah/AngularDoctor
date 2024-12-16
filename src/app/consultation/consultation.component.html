@@ -41,11 +41,11 @@
           <button mat-icon-button [routerLink]="['/consultationDetails', consultation.id]" matTooltip="Voir les détails">
               <mat-icon>launch</mat-icon>
             </button>
-        <button
-          class="delete-button"
+        <button 
+        mat-icon-button color="warn" 
           aria-label="Delete Consultation"
           (click)="deleteConsultation(consultation.id)">
-          <span class="material-icons">delete</span>
+          <mat-icon>delete</mat-icon>
         </button>
       </td>
     </ng-container>

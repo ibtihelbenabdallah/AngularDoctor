@@ -1,7 +1,7 @@
 <h2 mat-dialog-title>Add Consultation</h2>
 <mat-dialog-content>
   <form [formGroup]="addConsultationForm" class="new-consultation-form">
-    <mat-form-field appearance="outline" floatLabel="always">
+    <mat-form-field appearance="outline" floatLabel="always" style="margin-top: 16px;">
       <mat-label><i class="fas fa-user"></i> Select Patient</mat-label>
       <mat-select formControlName="PatientName" required>
         <mat-option *ngFor="let patient of patients" [value]="patient.Name">
@@ -13,7 +13,6 @@
       </mat-error>
     </mat-form-field>
     
-
     <mat-form-field appearance="outline" floatLabel="always">
       <mat-label><i class="fas fa-user-md"></i> Select Doctor</mat-label>
       <mat-select formControlName="DoctorName" required>
@@ -24,7 +23,6 @@
           No doctors available
         </mat-option>
       </mat-select>
-      
       <mat-error *ngIf="addConsultationForm.get('DoctorName')?.hasError('required')">
         Doctor is required
       </mat-error>
@@ -50,7 +48,6 @@
 
     <mat-form-field appearance="outline" floatLabel="always">
       <mat-label>Notes</mat-label>
-      
       <input matInput formControlName="Notes" required />
       <mat-error *ngIf="addConsultationForm.get('Note')?.hasError('required')">Note is required</mat-error>
     </mat-form-field>

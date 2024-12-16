@@ -22,7 +22,7 @@
 /* Style des en-têtes de colonne */
 .mat-header-cell {
   font-weight: bold;
-  background-color: #3f51b5;
+  background-color: #7575FF;
   color: white;
   text-align: left;
 }
@@ -32,8 +32,8 @@
   transition: background-color 0.3s ease;
 }
 
-.mat-row:hover {
-  background-color: #f1f1f1;
+.btn-edit:hover {
+  background-color: #3c3cda;
 }
 
 /* Pagination */

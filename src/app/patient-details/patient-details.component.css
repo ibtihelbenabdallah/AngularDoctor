@@ -1,161 +1,226 @@
-/* Styles généraux */
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7fb;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  
-  h1 {
-    font-size: 2.5em;
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    font-size: 1.2em;
-    color: #34495e;
-  }
-  
-  /* Doctor card */
-  .doctor-card {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 600px;
-    margin: 20px auto;
-  }
-  
-  .doctor-info {
-    margin-bottom: 20px;
-  }
-  
-  .doctor-info p {
-    margin: 10px 0;
-  }
-  
-  .btn-edit {
-    background-color: #2980b9;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-edit:hover {
-    background-color: #3498db;
-  }
-  
-  .no-doctor {
-    text-align: center;
-    font-size: 1.5em;
-    color: #e74c3c;
-  }
-  
-  /* Pop-up */
-  .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .popup-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 400px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .popup-content h2 {
-    text-align: center;
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    color: #2980b9;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1.1em;
-    box-sizing: border-box;
-  }
-  
-  .form-actions {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .btn-submit, .btn-cancel {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-submit {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-  }
-  
-  .btn-submit:hover {
-    background-color: #2ecc71;
-  }
-  
-  .btn-cancel {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-  }
-  
-  .btn-cancel:hover {
-    background-color: #c0392b;
-  }
-  .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-  }
-  
-  .popup-content {
-    display: flex;
+  font-family: 'Roboto', sans-serif;
+  background: #f4f7fb;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  color: #34495e;
+}
+
+/* Doctor Card */
+.doctor-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.info-item i {
+  font-size: 1.5rem;
+  color: #7575FF;
+  margin-right: 10px;
+}
+
+.info-item p {
+  margin: 0;
+}
+
+/* Buttons */
+.btn-edit {
+  background-color: #7575FF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-edit:hover {
+  background-color: #3c3cda;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Pop-up Content */
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 600px; /* Increased width */
+  max-height: 85%; /* Limit height */
+  overflow-y: auto; /* Add vertical scroll if necessary */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Add shadow */
+  border: 2px solid #7575FF; /* Add frame */
+  position: relative;
+}
+
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #34495e;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+  color: #999;
+}
+
+/* Form Row (Two Fields Side-by-Side) */
+.form-row {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.short-field {
+  width: calc(50% - 8px);
+}
+
+/* Gender Group */
+.gender-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-actions button:first-child {
+  background-color:#7575FF;
+  color: white;
+}
+
+.form-actions button:first-child:hover {
+  background-color:#7575FF;
+}
+
+.form-actions button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.form-actions button:last-child:hover {
+  background-color: #c0392b;
+}
+
+/* Scroll Customization */
+.popup-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+  background-color:#7575FF;
+  border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .form-row {
     flex-direction: column;
   }
-  
-  button {
-    margin-top: 10px;
+
+  .short-field {
+    width: 100%;
   }
-  
-  
+
+  .popup-content {
+    padding: 15px 20px;
+  }
+}
+.extra-long-field {
+  width: 100%;
+}
+
+.contact-details {
+  display: flex;
+  gap: 16px;
+}
+
+.additional-contact {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.spaced-section {
+  margin-top: 16px;
+}
+/* Increased width for longer fields */
+.long-field {
+  width: 100%; /* Ensures the field takes up the full width */
+}
+
+.spaced-field {
+  margin-top: 16px; /* Adds space above the Symptoms field */
+}
+ 
+button[mat-raised-button]:hover {
+  background-color: #3c3cda;
+}

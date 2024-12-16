@@ -11,6 +11,9 @@ mat-dialog-content {
     flex-direction: column;
     gap: 16px; /* Increased gap between fields */
   }
+  .mat-datepicker-toggle {
+    margin-left: 8px;
+  }
   
   /* Form sections */
   .form-section {
@@ -51,22 +54,15 @@ mat-dialog-content {
     width: 100%;
   }
   
-  /* Button styling */
-  button {
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
-  }
   
-  /* Raised button and hover state */
   button[mat-raised-button] {
-    background-color: #007bff;
+    background-color:#7575FF;
     color: white;
   }
   
+  
   button[mat-raised-button]:hover {
-    background-color: #0056b3;
+    background-color: #3c3cda;
   }
   
   /* Stroked button styling */
@@ -79,9 +75,3 @@ mat-dialog-content {
     border-color: #343a40;
     color: #343a40;
   }
-  
-  /* Focused field label color */
-  .mat-form-field.mat-focused .mat-form-field-label {
-    color: #3498db;
-  }
-  

@@ -2,7 +2,7 @@
 <mat-dialog-content>
   <form [formGroup]="addPatientForm" class="new-doctor-form">
   
-    <mat-form-field appearance="outline" floatLabel="always">
+    <mat-form-field appearance="outline" floatLabel="always" style="margin-top: 16px;">
       <mat-label>Patient Name</mat-label>
       <input matInput formControlName="Name" />
       <mat-error *ngIf="addPatientForm.get('Name')?.hasError('required')">Name is required</mat-error>
@@ -43,23 +43,13 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline" floatLabel="always">
-        <mat-label>DutyTiming</mat-label>
-        <input matInput formControlName="DutyTiming" />
-        <mat-error *ngIf="addPatientForm.get('DutyTiming')?.hasError('required')">DutyTiming is required</mat-error>
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="DOB" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="addPatientForm.get('DOB')?.hasError('required')">DOB is required</mat-error>
       </mat-form-field>
-
-
-
-    
-
-
-   
-
-    <mat-form-field appearance="outline" floatLabel="always">
-      <mat-label>DOB</mat-label>
-      <input matInput formControlName="DOB" />
-      <mat-error *ngIf="addPatientForm.get('DOB')?.hasError('required')">DOB is required</mat-error>
-    </mat-form-field>
+      
 
     <mat-form-field appearance="outline" floatLabel="always">
         <mat-label>Address</mat-label>
@@ -71,11 +61,10 @@
         <input matInput formControlName="Symptoms" />
         <mat-error *ngIf="addPatientForm.get('Symptoms')?.hasError('required')">Symptoms is required</mat-error>
       </mat-form-field>
-    
-      
+          
   </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-stroked-button color="warn" (click)="onNoClick()">Cancel</button>
-  <button mat-raised-button color="primary" [disabled]="addPatientForm.invalid" (click)="addPatient()">Save</button>
+  <button  mat-stroked-button color="warn" (click)="onNoClick()">Cancel</button>
+  <button  mat-raised-button color="primary" [disabled]="addPatientForm.invalid" (click)="addPatient()">Save</button>
 </mat-dialog-actions>

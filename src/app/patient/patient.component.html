@@ -31,23 +31,19 @@
         </ng-container>
   
         <!-- Mobile Column -->
-        <ng-container matColumnDef="Disease">
-          <th mat-header-cell *matHeaderCellDef> Disease </th>
-          <td mat-cell *matCellDef="let patient"> {{patient.Disease}} </td>
+        <ng-container matColumnDef="Address">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let patient"> {{patient.Address}} </td>
         </ng-container>
 
                 <!-- Mobile Column -->
                 <ng-container matColumnDef="Gender">
-                    <th mat-header-cell *matHeaderCellDef> Gender </th>
-                    <td mat-cell *matCellDef="let patient"> {{patient.Gender}} </td>
-                  </ng-container>
+                  <th mat-header-cell *matHeaderCellDef> Gender </th>
+                  <td mat-cell *matCellDef="let patient"> {{patient.Gender}} </td>
+                </ng-container>
 
                    <!-- Mobile Column -->
 
-                <ng-container matColumnDef="BloodGroup">
-                    <th mat-header-cell *matHeaderCellDef> BloodGroup </th>
-                    <td mat-cell *matCellDef="let patient"> {{patient.BloodGroup}} </td>
-                  </ng-container>
   
         <!-- Action Column -->
         <ng-container matColumnDef="Action">

@@ -62,15 +62,13 @@
     {
       "id": "3",
       "Name": "Adams",
-      "Text": "Adams",
-      "DOB": "1985-03-03T00:00:00.000Z",
-      "Mobile": "(717) 555-4454",
       "Email": "adams89@rpy.com",
-      "Address": "722 Moss Bay Blvd.",
+      "Mobile": "(717) 555-4454",
       "Disease": "Eye and Spectacles",
-      "DepartmentName": "GENERAL",
-      "BloodGroup": "B+",
       "Gender": "Male",
+      "BloodGroup": "B+",
+      "DOB": "2017-03-08T23:00:00.000Z",
+      "Address": "722 Moss Bay Blvd.",
       "Symptoms": "Frequent squinting, Eye fatigue or strain"
     },
     {
@@ -118,13 +116,13 @@
   ],
   "Consultation": [
     {
-      "id": "b103",
       "PatientName": "Richa",
       "DoctorName": "fatma maalej",
       "Date": "2024-12-12",
       "ConsultationTime": "12:00",
-      "Reason": "checkup",
-      "Notes": "N/A"
+      "Notes": "////",
+      "Reason": "///",
+      "id": "b103"
     },
     {
       "id": "eb40",
