@@ -1,57 +1,58 @@
 <div class="consultations-container">
+  <!-- Actions Header -->
   <div class="header-actions">
-      <button mat-raised-button color="primary" (click)="openAddConsultationDialog()">
-        <mat-icon>add</mat-icon> Add Consultation
-      </button>
-    </div>
-  <table mat-table [dataSource]="consultations" class="mat-elevation-z8">
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef>ID</th>
-      <td mat-cell *matCellDef="let consultation">{{ consultation.id }}</td>
-    </ng-container>
+    <button mat-raised-button color="primary" (click)="openAddConsultationDialog()">
+       Add Consultation
+    </button>
+  </div>
 
-    <ng-container matColumnDef="patientName">
-      <th mat-header-cell *matHeaderCellDef>Patient Name</th>
-      <td mat-cell *matCellDef="let consultation">{{ consultation.PatientName || 'Unknown' }}</td>
-    </ng-container>
+  <!-- Table Container -->
+  <div class="consultation-table-container mat-elevation-z8">
+    <table mat-table [dataSource]="consultations" class="mat-table">
 
-    <ng-container matColumnDef="doctorName">
-      <th mat-header-cell *matHeaderCellDef>Doctor Name</th>
-      <td mat-cell *matCellDef="let consultation">{{ consultation.DoctorName || 'Unknown' }}</td>
-    </ng-container>
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let consultation"> {{ consultation.id }} </td>
+      </ng-container>
 
-    <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef>Date</th>
-      <td mat-cell *matCellDef="let consultation">{{ consultation.Date | date: 'shortDate' }}</td>
-    </ng-container>
+      <!-- Patient Name Column -->
+      <ng-container matColumnDef="patientName">
+        <th mat-header-cell *matHeaderCellDef> Patient Name </th>
+        <td mat-cell *matCellDef="let consultation"> {{ consultation.PatientName || 'Unknown' }} </td>
+      </ng-container>
 
-    <!-- <ng-container matColumnDef="reason">
-      <th mat-header-cell *matHeaderCellDef>Reason</th>
-      <td mat-cell *matCellDef="let consultation">{{ consultation.Reason }}</td>
-    </ng-container>
+      <!-- Doctor Name Column -->
+      <ng-container matColumnDef="doctorName">
+        <th mat-header-cell *matHeaderCellDef> Doctor Name </th>
+        <td mat-cell *matCellDef="let consultation"> {{ consultation.DoctorName || 'Unknown' }} </td>
+      </ng-container>
 
-    <ng-container matColumnDef="notes">
-      <th mat-header-cell *matHeaderCellDef>Notes</th>
-      <td mat-cell *matCellDef="let consultation">{{ consultation.Notes }}</td>
-    </ng-container> -->
+      <!-- Date Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let consultation"> {{ consultation.Date | date: 'shortDate' }} </td>
+      </ng-container>
 
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Actions</th>
-      <td mat-cell *matCellDef="let consultation">
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let consultation">
           <button mat-icon-button [routerLink]="['/consultationDetails', consultation.id]" matTooltip="Voir les détails">
-              <mat-icon>launch</mat-icon>
-            </button>
-        <button 
-        mat-icon-button color="warn" 
-          aria-label="Delete Consultation"
-          (click)="deleteConsultation(consultation.id)">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </td>
-    </ng-container>
+            <mat-icon>launch</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" aria-label="Delete Consultation" (click)="deleteConsultation(consultation.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+      <!-- Header and Row Definitions -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 
+    <!-- Pagination -->
+    <mat-paginator [length]="consultations.length" [pageSize]="20" showFirstLastButtons></mat-paginator>
+  </div>
 </div>

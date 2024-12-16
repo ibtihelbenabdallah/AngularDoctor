@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Admin } from '../models/admin';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,17 +11,14 @@ import { Admin } from '../models/admin';
 export class LoginService {
   private apiUrl = 'http://localhost:3000/admin';  // URL de l'API JSON Server pour les admins
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   login(email: string, password: string): Observable<Admin | undefined> {
     return this.http.get<Admin[]>(this.apiUrl).pipe(
       map((admins) => {
-        // Log pour vérifier si l'API renvoie bien des données
-        console.log('Admins récupérés:', admins);
-
         const admin = admins.find((admin) => admin.email === email && admin.password === password);
         if (admin) {
-          console.log('Admin trouvé:', admin);  // Vérification si un admin est trouvé
+          this.authService.setCurrentAdmin(admin); // Mettez à jour l'utilisateur connecté
         }
         return admin;
       }),
@@ -29,5 +27,4 @@ export class LoginService {
         throw new Error('Erreur de connexion');
       })
     );
-  }
-}
+  }}

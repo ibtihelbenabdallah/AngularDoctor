@@ -6,8 +6,8 @@
     <div class="info align-center">
       <div class="image"><img src="./assets/admin.png" /></div>
       <div class="content nameContent">
-        <p class="name" style="margin-top: 16px;">admin</p>
-        <p class="user-type">Admin</p>
+        <p class="name" style="margin-top: 16px;">
+          {{ currentAdmin?.name || 'admin' }} <!-- Affiche le nom de l'admin connecté -->
       </div>
     </div>
 

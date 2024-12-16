@@ -155,16 +155,19 @@
   "admin": [
     {
       "id": "1",
+      "name" : "Admin",
       "email": "admin@gmail.com",
       "password": "1234"
     },
     {
       "id": "2",
+      "name" : "Ibtihel Ben Abdallah",
       "email": "ibtihel@gmail.com",
       "password": "ibtihel123"
     },
     {
       "id": "3",
+      "name" : "Malak Derbel",
       "email": "malak@gmail.com",
       "password": "malak123"
     }
