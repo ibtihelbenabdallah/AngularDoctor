@@ -27,7 +27,7 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
 import { ConsultationComponent } from './consultation/consultation.component';
 import { AddConsultationDialogComponent } from './add-consultation-dialog/add-consultation-dialog.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core'; // Ajoutez cette ligne
+import { MatNativeDateModule } from '@angular/material/core'; 
 import { ConsultationService } from './services/consultation.service';
 import { DoctorService } from './services/doctor.service';
 import { PatientService } from './services/patient.service';
@@ -90,7 +90,7 @@ import { NgChartsModule } from 'ng2-charts';
   MatDatepickerModule,
   MatNativeDateModule,
   NgChartsModule,
-  RouterModule
+  RouterModule,
   
   
     

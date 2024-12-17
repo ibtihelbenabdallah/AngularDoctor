@@ -28,19 +28,23 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     const { email, password } = this.loginform.value;
-
+  
     this.loginService.login(email, password).subscribe(
       (admin) => {
         if (admin) {
           // Si l'admin existe, rediriger vers la page protégée
           this.router.navigate(['/dashboard']);
         } else {
+          // Si l'admin n'existe pas, afficher un message d'erreur
           this.errorMessage = 'Email ou mot de passe incorrect';
+          alert(this.errorMessage); // Alerte spécifique
         }
       },
       (error) => {
-        this.errorMessage = 'Une erreur est survenue';
+        // En cas d'erreur API, afficher un message
+        this.errorMessage = 'Une erreur est survenue lors de la connexion';
+        alert(this.errorMessage); // Alerte pour erreur API
       }
     );
   }
-}
+}  
