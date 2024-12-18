@@ -74,15 +74,13 @@
     {
       "id": "4",
       "Name": "Janet",
-      "Text": "Janet",
-      "DOB": "2000-08-03T00:00:00.000Z",
-      "Mobile": "(717) 555-4544",
       "Email": "janet79@rpy.com",
-      "Address": "4110 Old Redmond Rd.",
+      "Mobile": "(717) 555-4544",
       "Disease": "Biological Problem",
-      "DepartmentName": "GENERAL",
+      "Gender": "Female",
       "BloodGroup": "B+",
-      "Gender": "Male",
+      "DOB": "2000-08-03T00:00:00.000Z",
+      "Address": "4110 Old Redmond Rd.",
       "Symptoms": "Physical aches or pain, Memory difficulties or personality change"
     },
     {
@@ -155,19 +153,19 @@
   "admin": [
     {
       "id": "1",
-      "name" : "Admin",
+      "name": "Admin",
       "email": "admin@gmail.com",
       "password": "1234"
     },
     {
       "id": "2",
-      "name" : "Ibtihel Ben Abdallah",
+      "name": "Ibtihel Ben Abdallah",
       "email": "ibtihel@gmail.com",
       "password": "ibtihel123"
     },
     {
       "id": "3",
-      "name" : "Malak Derbel",
+      "name": "Malak Derbel",
       "email": "malak@gmail.com",
       "password": "malak123"
     }
